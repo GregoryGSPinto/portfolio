@@ -45,19 +45,19 @@ const links: LinkItem[] = [
   {
     id: 'whatsapp',
     label: { pt: 'WhatsApp', en: 'WhatsApp' },
-    value: '+55 31 99679-3625',
+    value: '+55 31 98357-4530',
     href: (lang: 'pt' | 'en') =>
       lang === 'pt'
-        ? 'https://wa.me/5531996793625?text=Oi%20Gregory%2C%20vi%20seu%20portfolio%20e%20gostaria%20de%20conversar'
-        : 'https://wa.me/5531996793625?text=Hi%20Gregory%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20chat',
+        ? 'https://wa.me/5531983574530?text=Oi%20Gregory%2C%20vi%20seu%20portfolio%20e%20gostaria%20de%20conversar'
+        : 'https://wa.me/5531983574530?text=Hi%20Gregory%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20chat',
     icon: whatsappIcon,
     copyable: false,
   },
   {
     id: 'phone',
     label: { pt: 'Telefone', en: 'Phone' },
-    value: '+55 31 99679-3625',
-    href: 'tel:+5531996793625',
+    value: '+55 31 98357-4530',
+    href: 'tel:+5531983574530',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

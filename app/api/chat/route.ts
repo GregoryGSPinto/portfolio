@@ -6,7 +6,7 @@ ABOUT GREGORY:
 - Name: Gregory Guimarães
 - Current role: AI Solutions Architect
 - Location: Goiás, Brazil
-- Contact: gregoryguimaraes12@outlook.com | +55 31 99679-3625
+- Contact: gregoryguimaraes12@outlook.com | +55 31 98357-4530
 - GitHub: github.com/GregoryGSPinto
 - LinkedIn: linkedin.com/in/mqt-gregory
 

@@ -578,7 +578,7 @@ CONTACT SECTION:
    - Email: gregoryguimaraes12@outlook.com (with copy-to-clipboard)
    - GitHub: github.com/GregoryGSPinto
    - LinkedIn: linkedin.com/in/mqt-gregory
-   - Phone: +55 31 99679-3625
+   - Phone: +55 31 98357-4530
    - Each with icon and hover underline effect
 
 7. Build must pass" \
