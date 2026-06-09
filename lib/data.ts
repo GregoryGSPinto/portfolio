@@ -4,8 +4,8 @@ export const personalInfo = {
   lastName: 'Guimarães',
   role: 'AI Solutions Architect',
   email: 'gregoryguimaraes12@outlook.com',
-  phone: '+55 31 99679-3625',
-  phoneTel: 'tel:+5531996793625',
+  phone: '+55 31 98357-4530',
+  phoneTel: 'tel:+5531983574530',
   github: 'https://github.com/GregoryGSPinto',
   githubHandle: 'GregoryGSPinto',
   linkedin: 'https://www.linkedin.com/in/mqt-gregory/',
@@ -262,13 +262,13 @@ export const contactLinks = [
   },
   {
     label: 'WhatsApp',
-    value: '+55 31 99679-3625',
-    href: 'https://wa.me/5531996793625',
+    value: '+55 31 98357-4530',
+    href: 'https://wa.me/5531983574530',
   },
   {
     label: 'Telefone',
-    value: '+55 31 99679-3625',
-    href: 'tel:+5531996793625',
+    value: '+55 31 98357-4530',
+    href: 'tel:+5531983574530',
   },
   {
     label: 'GitHub',
