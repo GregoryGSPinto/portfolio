@@ -6,7 +6,7 @@ export const translations = {
       more: 'Mais',
     },
     hero: {
-      preTitle: 'AI Solutions Architect',
+      preTitle: 'Senior AI Solution Architect',
       tagline: 'Arquiteto de soluções inteligentes que transformam operações complexas em sistemas escaláveis e decisões data-driven.',
       cta1: 'Explorar Cases',
       cta2: 'Agendar Conversa',
@@ -141,7 +141,7 @@ export const translations = {
       more: 'More',
     },
     hero: {
-      preTitle: 'AI Solutions Architect',
+      preTitle: 'Senior AI Solution Architect',
       tagline: 'Architect of intelligent solutions that transform complex operations into scalable systems and data-driven decisions.',
       cta1: 'Explore Cases',
       cta2: 'Schedule a Call',

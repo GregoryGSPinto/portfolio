@@ -137,7 +137,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <PersonJsonLd
           name={siteConfig.legalName}
-          jobTitle="Senior Solutions Architect"
+          jobTitle="Founder & Solution Architect, Verdor"
           url={siteConfig.url}
           sameAs={[
             siteConfig.links.github,

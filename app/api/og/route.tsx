@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const title = searchParams.get('title') || 'Gregory Guimarães';
   const subtitle =
-    searchParams.get('subtitle') || 'AI Solutions Architect';
+    searchParams.get('subtitle') || 'Senior AI Solution Architect';
 
   return new ImageResponse(
     (

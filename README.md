@@ -156,8 +156,8 @@ Each project is a structured data object with localized fields: challenge, appro
 
 ```bash
 # Clone
-git clone https://github.com/GregoryGSPinto/portifolio.git
-cd portifolio
+git clone https://github.com/GregoryGSPinto/portfolio.git
+cd portfolio
 
 # Install dependencies
 pnpm install
@@ -188,7 +188,7 @@ pnpm start
 ## Project Structure
 
 ```
-portifolio/
+portfolio/
 ├── app/                # Next.js App Router
 │   ├── api/            # 4 API routes (chat, contact, github-stack, og)
 │   ├── blog/           # Blog listing + [slug] detail pages
@@ -211,6 +211,6 @@ portifolio/
 
 ## Author
 
-**Gregory Guimaraes Pinto** — Senior AI Solutions Architect
+**Gregory Guimaraes Pinto** — Senior AI Solution Architect | Founder @ Verdor
 
 [GitHub](https://github.com/GregoryGSPinto) · [LinkedIn](https://www.linkedin.com/in/mqt-gregory/) · [portfolio-gregory-tau.vercel.app](https://portfolio-gregory-tau.vercel.app)
