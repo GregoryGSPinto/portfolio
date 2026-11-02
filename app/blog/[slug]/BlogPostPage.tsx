@@ -79,6 +79,7 @@ export default function BlogPostPage({
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
+                  timeZone: 'UTC',
                 })}
               </time>
               <span className="text-text-ghost">|</span>

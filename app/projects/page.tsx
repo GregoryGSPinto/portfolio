@@ -9,14 +9,14 @@ export const metadata: Metadata = {
     canonical: absoluteUrl('/projects'),
   },
   openGraph: {
-    title: 'Projects | Gregory Guimaraes',
+    title: 'Projects | Gregory Guimarães',
     description: 'Case studies covering product architecture, operational software, frontend systems, and AI-enabled delivery.',
     url: absoluteUrl('/projects'),
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Projects | Gregory Guimaraes',
+    title: 'Projects | Gregory Guimarães',
     description: 'Case studies covering product architecture, operational software, frontend systems, and AI-enabled delivery.',
   },
 };

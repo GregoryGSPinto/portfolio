@@ -1,28 +1,43 @@
 import type { Metadata, Viewport } from 'next';
-import { Outfit, DM_Mono } from 'next/font/google';
+import { Barlow, Barlow_Condensed, Baloo_2, IBM_Plex_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { LangProvider } from '@/context/LangContext';
 import { ThemeProvider } from '@/context/ThemeContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import ScrollProgress from '@/components/layout/ScrollProgress';
 import SkipLink from '@/components/layout/SkipLink';
 import { PersonJsonLd, WebsiteJsonLd } from '@/components/seo/JsonLd';
 import { absoluteUrl, siteConfig } from '@/lib/site';
 import './globals.css';
+import './home.css';
 
-const outfit = Outfit({
+const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-outfit',
+  weight: ['500', '600', '700'],
+  variable: '--font-barlow-condensed',
   display: 'swap',
 });
 
-const dmMono = DM_Mono({
+const barlow = Barlow({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-dm-mono',
+  weight: ['400', '500', '600'],
+  variable: '--font-barlow',
+  display: 'swap',
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-plex-mono',
+  display: 'swap',
+});
+
+// Only used inside the Kids phone mockup
+const baloo = Baloo_2({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  variable: '--font-baloo',
   display: 'swap',
 });
 
@@ -31,7 +46,7 @@ export const metadata: Metadata = {
   applicationName: siteConfig.shortTitle,
   title: {
     default: siteConfig.title,
-    template: '%s | Gregory Guimaraes',
+    template: '%s | Gregory Guimarães',
   },
   description: siteConfig.description,
   authors: [{ name: siteConfig.legalName, url: siteConfig.links.linkedin }],
@@ -81,6 +96,9 @@ export const metadata: Metadata = {
   },
   other: {
     'format-detection': 'telephone=no, email=no, address=no',
+    // The site ships its own PT/EN toggle; browser auto-translation rewrites text nodes
+    // and makes React throw hydration/runtime errors (#418 / "Application error").
+    google: 'notranslate',
   },
 };
 
@@ -88,23 +106,18 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#0A0A0B' },
-    { media: '(prefers-color-scheme: light)', color: '#FAFAF9' },
+    { media: '(prefers-color-scheme: dark)', color: '#0D0D10' },
+    { media: '(prefers-color-scheme: light)', color: '#F3F1ED' },
   ],
 };
 
+// Light by default; only an explicit saved 'dark' switches. Must match ThemeContext.readTheme.
 const themeScript = `
 (function() {
   try {
-    var pref = localStorage.getItem('theme-preference');
-    var resolved = 'dark';
-    if (pref === 'light') resolved = 'light';
-    else if (pref === 'dark') resolved = 'dark';
-    else if (pref === 'system' || !pref) {
-      resolved = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    }
-    document.documentElement.classList.add(resolved);
-  } catch(e) {}
+    var dark = localStorage.getItem('theme-preference') === 'dark';
+    document.documentElement.classList.add(dark ? 'dark' : 'light');
+  } catch(e) { document.documentElement.classList.add('light'); }
 })();
 `;
 
@@ -116,14 +129,15 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      translate="no"
       suppressHydrationWarning
-      className={`${outfit.variable} ${dmMono.variable}`}
+      className={`${barlowCondensed.variable} ${barlow.variable} ${plexMono.variable} ${baloo.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <PersonJsonLd
           name={siteConfig.legalName}
-          jobTitle="Product-minded Software Architect"
+          jobTitle="Senior Solutions Architect"
           url={siteConfig.url}
           sameAs={[
             siteConfig.links.github,
@@ -150,7 +164,6 @@ export default function RootLayout({
         <ThemeProvider>
           <LangProvider>
             <SkipLink />
-            <ScrollProgress />
             <Navbar />
             {children}
             <Footer />

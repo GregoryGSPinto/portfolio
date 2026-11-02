@@ -18,11 +18,11 @@ export const translations = {
     about: {
       label: 'Sobre',
       title: 'Autoridade tecnica\nsem verniz',
-      bio1: 'Minha trajetoria comecou em operacoes criticas, onde contexto, disciplina e continuidade importam mais do que discurso. Essa experiencia molda como desenho software hoje.',
-      bio2: 'Hoje transformo esse repertorio em arquitetura, produto e implementacao. Gosto de problemas em que o dominio e complexo, a operacao e critica e o software precisa ser claro para quem usa e para quem mantem.',
+      bio1: 'Sou fundador solo da Verdor, uma empresa de software vertical com IA. Projeto, construo e opero os produtos de ponta a ponta.',
+      bio2: 'Transformo isso em arquitetura, produto e implementacao. Gosto de problemas em que o dominio e complexo e o software precisa ser claro para quem usa e para quem mantem.',
       bio3: 'Nao vendo hype tecnico. Prefiro mostrar criterio: por que uma arquitetura faz sentido, onde ela custa caro, qual risco ela reduz e como isso aparece no produto final.',
       metrics: {
-        years: 'Anos em operacoes criticas',
+        years: 'Anos de experiencia',
         projects: 'Projetos no portfolio',
         tests: 'Testes automatizados',
         domains: 'Dominios digitalizados',
@@ -231,11 +231,11 @@ export const translations = {
     about: {
       label: 'About',
       title: 'Technical authority\nwithout theatre',
-      bio1: 'My path started in critical operations, where context, discipline, and continuity matter more than presentation. That experience shapes how I design software today.',
-      bio2: 'I now translate that background into architecture, product thinking, and implementation. I am at my best when the domain is complex, the operation is critical, and the software must be clear for both users and maintainers.',
+      bio1: 'I am the solo founder of Verdor, a vertical software company with AI. I design, build, and run the products end to end.',
+      bio2: 'I turn that into architecture, product thinking, and implementation. I am at my best when the domain is complex and the software must be clear for both users and maintainers.',
       bio3: 'I do not sell technical hype. I prefer to show judgment: why an architecture makes sense, where it is expensive, which risk it reduces, and how that shows up in the final product.',
       metrics: {
-        years: 'Years in critical operations',
+        years: 'Years of experience',
         projects: 'Portfolio projects',
         tests: 'Automated tests',
         domains: 'Digitized domains',

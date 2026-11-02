@@ -1,45 +1,18 @@
 'use client';
 
-import { useLang } from '@/context/LangContext';
+import { siteConfig } from '@/lib/site';
+import { useHome } from '@/components/home/useHome';
 
 export default function Footer() {
-  const { t: root } = useLang();
-  const t = root.footer;
+  const { c } = useHome();
 
   return (
-    <footer
-      className="px-5 py-10 md:px-12 md:py-12"
-      style={{ borderTop: '1px solid var(--footer-border)' }}
-    >
-      <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Left — copyright */}
-        <span
-          className="font-mono text-[10px] md:text-[11px] tracking-[2px]"
-          style={{ color: 'var(--text-ghost)' }}
-        >
-          {t.left}
-        </span>
-
-        {/* Center — built with */}
-        <span
-          className="font-mono text-[10px] md:text-[11px] tracking-[1.5px] flex items-center gap-1"
-          style={{ color: 'var(--text-ghost)' }}
-        >
-          {t.built}{' '}
-          <span style={{ color: 'var(--accent)' }} aria-label="love">
-            &#9829;
-          </span>
-        </span>
-
-        {/* Right — source code link */}
-        <a
-          href="https://github.com/GregoryGSPinto/portifolio"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-mono text-[10px] md:text-[11px] tracking-[2px] transition-colors duration-300 hover:text-accent"
-          style={{ color: 'var(--text-ghost)' }}
-        >
-          {t.source} &rarr;
+    <footer className="pf-footer">
+      <div className="pf-wrap">
+        <span>{c.footer.left}</span>
+        <span>{c.footer.place}</span>
+        <a href={siteConfig.links.repository} target="_blank" rel="noopener noreferrer">
+          {c.footer.source}
         </a>
       </div>
     </footer>
