@@ -45,3 +45,6 @@ next-env.d.ts
 # IDE
 .vscode
 .idea
+
+# local pipeline run logs (can mention internal project names)
+.pipeline-logs/
