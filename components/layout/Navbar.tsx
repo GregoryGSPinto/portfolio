@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useLang } from '@/context/LangContext';
 import { useTheme } from '@/context/ThemeContext';
@@ -37,13 +38,13 @@ function Tools({ className }: { className: string }) {
   const dark = theme === 'dark';
 
   return (
-    <div className={className}>
-      <button type="button" className="pf-tool" onClick={toggleLang} aria-label={c.nav.switchLang}>
+    <div className={className} role="group" aria-label={c.nav.prefsLabel}>
+      <button type="button" className="pf-tool pf-cb" onClick={toggleLang} aria-label={c.nav.switchLang}>
         <span aria-hidden="true">{c.nav.langShort}</span>
       </button>
       <button
         type="button"
-        className="pf-tool"
+        className="pf-tool pf-cb"
         onClick={toggleTheme}
         aria-label={dark ? c.nav.themeToLight : c.nav.themeToDark}
       >
@@ -53,8 +54,43 @@ function Tools({ className }: { className: string }) {
   );
 }
 
+// Marks the nav item of the section currently in view. Starts empty so server and client markup match.
+function useActiveSection(ids: readonly string[]) {
+  const [active, setActive] = useState<string | null>(null);
+  useEffect(() => {
+    const els = ids.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => el !== null);
+    if (els.length === 0) return;
+    // Active = the last section whose top has passed 35% of the viewport; recomputed from layout on every observer tick.
+    const pick = () => {
+      const line = window.innerHeight * 0.35;
+      let current: string | null = null;
+      for (const el of els) if (el.getBoundingClientRect().top <= line) current = el.id;
+      setActive(current);
+    };
+    const io = new IntersectionObserver(pick, { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(pick);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    pick();
+    els.forEach((el) => io.observe(el));
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [ids]);
+  return active;
+}
+
 export default function Navbar() {
   const { c } = useHome();
+  const ids = useMemo(() => c.nav.links.map((l) => l.id), [c.nav.links]);
+  const active = useActiveSection(ids);
 
   return (
     <header className="pf-header">
@@ -65,7 +101,7 @@ export default function Navbar() {
         </Link>
         <nav aria-label={c.nav.label} className="pf-nl">
           {c.nav.links.map((l) => (
-            <Link key={l.id} href={`/#${l.id}`}>
+            <Link key={l.id} href={`/#${l.id}`} aria-current={active === l.id ? 'true' : undefined}>
               {l.label}
             </Link>
           ))}
@@ -76,14 +112,14 @@ export default function Navbar() {
         </a>
       </div>
       <div className="pf-mnav">
+        <Tools className="pf-tools pf-tools-mob" />
         <nav aria-label={c.nav.sectionsLabel} className="pf-mscroll">
           {c.nav.links.map((l) => (
-            <Link key={l.id} href={`/#${l.id}`} className="pf-chip">
+            <Link key={l.id} href={`/#${l.id}`} className="pf-chip" aria-current={active === l.id ? 'true' : undefined}>
               {l.label}
             </Link>
           ))}
         </nav>
-        <Tools className="pf-tools" />
       </div>
     </header>
   );

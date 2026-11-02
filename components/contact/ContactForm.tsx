@@ -52,7 +52,7 @@ export default function ContactForm() {
       required: 'Campo obrigatorio',
       invalidEmail: 'Email invalido',
       shortMessage: 'Inclua mais contexto na mensagem',
-      fallback: 'O formulario esta indisponivel no momento. Use o email direto abaixo.',
+      fallback: 'O formulário esta indisponível no momento. Use o email direto abaixo.',
       directEmail: 'Enviar email direto',
     },
     en: {

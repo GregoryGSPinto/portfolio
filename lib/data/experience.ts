@@ -18,7 +18,7 @@ export const experienceEntries: ExperienceEntry[] = [
     period: { pt: '2024 - Presente', en: '2024 - Present' },
     location: { pt: 'Remoto', en: 'Remote' },
     desc: {
-      pt: 'Arquitetura de software orientada a produto. Projetei e construi plataformas com DDD, Event Sourcing e integracao de IA. Foco em dominios operacionais complexos onde decisao tecnica precisa ser auditavel e sustentavel.',
+      pt: 'Arquitetura de software orientada a produto. Projetei e construi plataformas com DDD, Event Sourcing e integração de IA. Foco em dominios operacionais complexos onde decisão técnica precisa ser auditável e sustentável.',
       en: 'Product-oriented software architecture. Designed and built platforms with DDD, Event Sourcing, and AI integration. Focus on complex operational domains where technical decisions must be auditable and sustainable.',
     },
     tags: ['Next.js', 'TypeScript', 'DDD', 'Event Sourcing', 'AI/ML', 'React'],
