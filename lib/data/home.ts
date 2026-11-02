@@ -134,57 +134,28 @@ const pt = {
   },
   gallery: {
     title: 'Os produtos por dentro',
-    lead: 'Telas reais dos produtos no ar. Deslize para ver cada um.',
-    region: 'Telas dos produtos',
-    prev: 'Produto anterior',
-    next: 'Próximo produto',
-    slides: [
-      {
-        name: 'Blackbelts',
+    lead: 'Capturas de tela de cada produto. Passam sozinhas; pause ou navegue quando quiser.',
+    region: 'Telas de',
+    prev: 'Slide anterior',
+    next: 'Próximo slide',
+    pause: 'Pausar apresentação',
+    play: 'Retomar apresentação',
+    slideOf: 'Slide {n} de {total}: {label}',
+    demo: 'Dados de demonstração',
+    products: {
+      blackbelts: {
         tagline: 'SaaS para academias de artes marciais',
-        alt: 'Site do Blackbelts: Volta pro tatame, cobrança automática, chamada por QR Code e graduações',
-        bullets: [
-          'Check-in, turmas, cobranças e presença no mesmo app.',
-          'Painel financeiro para o administrador da academia.',
-          'Biblioteca de vídeos com upload em 4 etapas retomável (TUS).',
-          'Módulo Kids com 8 mascotes e 4 paletas.',
-        ],
         footnote: 'Next.js, TypeScript, Supabase com RLS, Asaas, Bunny Stream',
       },
-      {
-        name: 'App do aluno',
-        tagline: 'Blackbelts',
-        alt: 'App do aluno do Blackbelts: Continue a treinar, faixa azul, próxima aula',
-        bullets: [
-          'Faixa atual, próxima aula e sessões recentes na tela inicial.',
-          'Presença por QR Code na entrada.',
-          'Mensalidade por Pix, cartão recorrente ou boleto.',
-        ],
-        footnote: 'Captura da tela Meu treino',
+      primalwod: {
+        tagline: 'SaaS para boxes de CrossFit',
+        footnote: 'Next.js, Supabase, Asaas',
       },
-      {
-        name: 'Aura',
+      aura: {
         tagline: 'Agente de IA pessoal, local-first',
-        alt: 'Tela de login da Aura, agente de IA autônomo',
-        bullets: [
-          'Roda local e funciona offline, sem enviar dados sensíveis a servidores externos.',
-          'L1 age sozinha, L2 pede aprovação, L3 nunca age sozinha.',
-          'Memória semântica alimentada por centenas de conversas.',
-        ],
         footnote: 'React, TypeScript, execução local',
       },
-      {
-        name: 'PrimalWOD',
-        tagline: 'SaaS para boxes de CrossFit',
-        alt: 'Marca PrimalWOD',
-        bullets: [
-          'Gestão de box funcional: alunos, treinos e cobranças.',
-          'Subconta Asaas para pagamentos embutidos.',
-          'Pacote completo de assets para App Store e Google Play.',
-        ],
-        footnote: 'Captura real em breve',
-      },
-    ],
+    },
   },
   projects: {
     title: 'Projetos',
@@ -390,57 +361,28 @@ const en: HomeCopy = {
   },
   gallery: {
     title: 'The products from the inside',
-    lead: 'Real screens from live products. Swipe to see each one.',
-    region: 'Product screens',
-    prev: 'Previous product',
-    next: 'Next product',
-    slides: [
-      {
-        name: 'Blackbelts',
+    lead: 'Screenshots of each product. They advance on their own; pause or navigate whenever you like.',
+    region: 'Screens of',
+    prev: 'Previous slide',
+    next: 'Next slide',
+    pause: 'Pause slideshow',
+    play: 'Resume slideshow',
+    slideOf: 'Slide {n} of {total}: {label}',
+    demo: 'Demo data',
+    products: {
+      blackbelts: {
         tagline: 'SaaS for martial arts gyms',
-        alt: 'Blackbelts website: Back to the mat, automatic billing, QR Code attendance and belt promotions',
-        bullets: [
-          'Check-in, classes, billing and attendance in the same app.',
-          'Finance dashboard for the gym administrator.',
-          'Video library with a resumable 4-step upload (TUS).',
-          'Kids module with 8 mascots and 4 palettes.',
-        ],
         footnote: 'Next.js, TypeScript, Supabase with RLS, Asaas, Bunny Stream',
       },
-      {
-        name: 'Student app',
-        tagline: 'Blackbelts',
-        alt: 'Blackbelts student app: Keep training, blue belt, next class',
-        bullets: [
-          'Current belt, next class and recent sessions on the home screen.',
-          'Attendance by QR Code at the door.',
-          'Monthly fee by Pix, recurring card or boleto.',
-        ],
-        footnote: 'Screenshot of the My training screen',
+      primalwod: {
+        tagline: 'SaaS for CrossFit boxes',
+        footnote: 'Next.js, Supabase, Asaas',
       },
-      {
-        name: 'Aura',
+      aura: {
         tagline: 'Personal AI agent, local-first',
-        alt: 'Login screen of Aura, an autonomous AI agent',
-        bullets: [
-          'Runs locally and works offline, without sending sensitive data to external servers.',
-          'L1 acts alone, L2 asks for approval, L3 never acts alone.',
-          'Semantic memory fed by hundreds of conversations.',
-        ],
         footnote: 'React, TypeScript, local execution',
       },
-      {
-        name: 'PrimalWOD',
-        tagline: 'SaaS for CrossFit boxes',
-        alt: 'PrimalWOD wordmark',
-        bullets: [
-          'Functional training box management: students, workouts and billing.',
-          'Asaas sub-account for embedded payments.',
-          'Complete asset package for the App Store and Google Play.',
-        ],
-        footnote: 'Real screenshot coming soon',
-      },
-    ],
+    },
   },
   projects: {
     title: 'Projects',
