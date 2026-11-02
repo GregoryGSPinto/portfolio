@@ -94,6 +94,7 @@ export default function BlogList({ posts, tags }: BlogListProps) {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',
+                      timeZone: 'UTC',
                     })}
                   </time>
                   <span className="text-text-ghost">|</span>
@@ -132,6 +133,7 @@ export default function BlogList({ posts, tags }: BlogListProps) {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
+                        timeZone: 'UTC',
                       })}
                     </time>
                     <span className="text-text-ghost">|</span>

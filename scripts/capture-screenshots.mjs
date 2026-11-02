@@ -8,10 +8,6 @@ const outDir = join(__dirname, '..', 'public', 'projects');
 mkdirSync(outDir, { recursive: true });
 
 const projects = [
-  { slug: 't4-platform', url: 'https://t4-platform.vercel.app' },
-  { slug: 'rail360', url: 'https://rail360.vercel.app' },
-  { slug: 'rail-ecosystem', url: 'https://rail-ecosystem.vercel.app' },
-  { slug: 't4-deslocamento', url: 'https://t4-deslocamento.vercel.app' },
   { slug: 'blackbelt', url: 'https://blackbeltv2.vercel.app/' },
   { slug: 'aura', url: 'https://aura-assistent.vercel.app/chat' },
 ];

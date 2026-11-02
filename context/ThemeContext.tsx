@@ -1,76 +1,67 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useSyncExternalStore, ReactNode } from 'react';
 
-type ThemePreference = 'system' | 'light' | 'dark';
-type ResolvedTheme = 'light' | 'dark';
+export type Theme = 'light' | 'dark';
 
 interface ThemeContextType {
-  preference: ThemePreference;
-  resolvedTheme: ResolvedTheme;
-  cycleTheme: () => void;
+  theme: Theme;
+  toggleTheme: () => void;
 }
+
+const STORAGE_KEY = 'theme-preference';
+const listeners = new Set<() => void>();
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-function getSystemTheme(): ResolvedTheme {
-  if (typeof window === 'undefined') return 'dark';
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-}
-
-function getStoredPreference(): ThemePreference {
-  if (typeof window === 'undefined') return 'system';
-  const stored = localStorage.getItem('theme-preference');
-  if (stored && ['system', 'light', 'dark'].includes(stored)) {
-    return stored as ThemePreference;
+// Light is the default. Anything other than an explicit 'dark' (including the legacy
+// 'system' value) resolves to light, matching the inline script in app/layout.tsx.
+function readTheme(): Theme {
+  try {
+    return localStorage.getItem(STORAGE_KEY) === 'dark' ? 'dark' : 'light';
+  } catch {
+    return 'light';
   }
-  return 'system';
 }
 
-function resolveTheme(preference: ThemePreference): ResolvedTheme {
-  return preference === 'system' ? getSystemTheme() : preference;
+function subscribe(onChange: () => void) {
+  listeners.add(onChange);
+  window.addEventListener('storage', onChange);
+  return () => {
+    listeners.delete(onChange);
+    window.removeEventListener('storage', onChange);
+  };
 }
 
-function applyThemeToDOM(resolved: ResolvedTheme) {
+const getServerSnapshot = (): Theme => 'light';
+
+function applyThemeToDOM(theme: Theme) {
   const root = document.documentElement;
   root.classList.remove('light', 'dark');
-  root.classList.add(resolved);
+  root.classList.add(theme);
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [preference, setPreference] = useState<ThemePreference>(getStoredPreference);
-  const resolved = resolveTheme(preference);
+  const theme = useSyncExternalStore(subscribe, readTheme, getServerSnapshot);
 
-  // Apply theme class to DOM and enable transitions after mount
   useEffect(() => {
-    applyThemeToDOM(resolved);
-    // Enable smooth transitions after initial render
-    requestAnimationFrame(() => {
-      document.documentElement.classList.add('theme-transition');
-    });
-  }, [resolved]);
+    applyThemeToDOM(theme);
+  }, [theme]);
 
-  // Listen to system preference changes when in 'system' mode
-  useEffect(() => {
-    if (preference !== 'system') return;
-
-    const mq = window.matchMedia('(prefers-color-scheme: light)');
-    const handler = () => applyThemeToDOM(resolveTheme('system'));
-
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, [preference]);
-
-  const cycleTheme = useCallback(() => {
-    const next: ThemePreference =
-      preference === 'system' ? 'light' : preference === 'light' ? 'dark' : 'system';
-    setPreference(next);
-    localStorage.setItem('theme-preference', next);
-    applyThemeToDOM(resolveTheme(next));
-  }, [preference]);
+  const toggleTheme = useCallback(() => {
+    const root = document.documentElement;
+    root.classList.add('theme-transition');
+    window.setTimeout(() => root.classList.remove('theme-transition'), 400);
+    try {
+      localStorage.setItem(STORAGE_KEY, readTheme() === 'dark' ? 'light' : 'dark');
+    } catch {
+      // storage blocked: preference just won't persist
+    }
+    listeners.forEach((notify) => notify());
+  }, []);
 
   return (
-    <ThemeContext.Provider value={{ preference, resolvedTheme: resolved, cycleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
