@@ -163,15 +163,15 @@ export const productShows: ProductShow[] = [
         text: {
           pt: {
             label: 'Aluno Kids',
-            caption: 'Início do módulo Kids: faixa, estrelas, figurinhas e conquistas, com mascote de panda.',
-            altDesktop: 'Início do módulo Kids do Blackbelts no computador, com mascote de panda, faixa, estrelas e figurinhas',
-            altMobile: 'Início do módulo Kids do Blackbelts no celular, com mascote de panda e faixa',
+            caption: 'Tela Minha Faixa do módulo Kids: faixa atual, próxima faixa e a caminhada do aluno, com mascote de panda.',
+            altDesktop: 'Tela Minha Faixa do módulo Kids do Blackbelts no computador, com mascote de panda, faixa atual e caminhada',
+            altMobile: 'Tela Minha Faixa do módulo Kids do Blackbelts no celular, com mascote de panda e faixa atual',
           },
           en: {
             label: 'Kids student',
-            caption: 'Kids module home: belt, stars, stickers and achievements, with a panda mascot.',
-            altDesktop: 'Blackbelts Kids module home on desktop, with a panda mascot, belt, stars and stickers',
-            altMobile: 'Blackbelts Kids module home on mobile, with a panda mascot and belt',
+            caption: 'Kids module My Belt screen: current belt, next belt and the student’s journey, with a panda mascot.',
+            altDesktop: 'Blackbelts Kids module My Belt screen on desktop, with a panda mascot, current belt and journey',
+            altMobile: 'Blackbelts Kids module My Belt screen on mobile, with a panda mascot and current belt',
           },
         },
       },
