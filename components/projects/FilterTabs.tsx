@@ -13,12 +13,12 @@ export default function FilterTabs({ active, onChange }: FilterTabsProps) {
   const { lang } = useLang();
 
   return (
-    <div className="flex items-center gap-1 p-1 rounded-xl w-fit" style={{ background: 'var(--card-bg)' }}>
+    <div className="flex flex-wrap items-center gap-1 p-1 rounded-xl w-fit max-w-full" style={{ background: 'var(--card-bg)' }}>
       {projectCategories.map((cat) => (
         <button
           key={cat.id}
           onClick={() => onChange(cat.id)}
-          className="relative font-mono text-xs uppercase tracking-wider px-4 py-2 rounded-lg transition-colors duration-200"
+          className="relative font-mono text-xs uppercase tracking-wider px-4 py-2 min-h-[44px] rounded-lg transition-colors duration-200"
           style={{
             color: active === cat.id ? 'var(--bg-primary)' : 'var(--text-tertiary)',
           }}

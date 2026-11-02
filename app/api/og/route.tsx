@@ -94,7 +94,7 @@ export async function GET(request: NextRequest) {
               fontWeight: 500,
             }}
           >
-            gregorypinto.dev
+            portfolio-gregory-tau.vercel.app
           </div>
         </div>
       </div>

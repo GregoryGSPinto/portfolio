@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://gregorypinto.dev/sitemap.xml',
+    sitemap: 'https://portfolio-gregory-tau.vercel.app/sitemap.xml',
   };
 }

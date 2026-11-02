@@ -9,7 +9,7 @@ mkdirSync(outDir, { recursive: true });
 
 const projects = [
   { slug: 'blackbelt', url: 'https://blackbeltv2.vercel.app/' },
-  { slug: 'aura', url: 'https://aura-assistent.vercel.app/chat' },
+  { slug: 'aura', url: 'https://aura-assistent.vercel.app' },
 ];
 
 const browser = await puppeteer.launch({

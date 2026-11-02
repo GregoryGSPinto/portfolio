@@ -661,7 +661,7 @@ phase_3() {
 2. Add dynamic metadata to app/projects/[slug]/page.tsx using generateMetadata
 
 3. Create app/api/og/route.tsx using @vercel/og (ImageResponse) for dynamic OG images:
-   - Dark background (#0A0A0B), 'GG' logo, title, subtitle, 'gregorypinto.dev'
+   - Dark background (#0A0A0B), 'GG' logo, title, subtitle, 'portfolio-gregory-tau.vercel.app'
    - Accepts ?title and ?subtitle query params
    - Runtime: edge
 
@@ -840,7 +840,7 @@ main() {
   echo ""
   log_phase "✓" "Pipeline Complete!"
   echo -e "  ${GREEN}All phases executed successfully.${NC}"
-  echo -e "  ${GREEN}Check your deploy at: https://gregorypinto.dev${NC}"
+  echo -e "  ${GREEN}Check your deploy at: https://portfolio-gregory-tau.vercel.app${NC}"
   echo ""
 }
 
