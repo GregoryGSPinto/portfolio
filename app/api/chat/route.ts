@@ -13,7 +13,7 @@ ABOUT GREGORY:
 MAIN PROJECTS:
 1. BlackBelt v2 - Modern platform for gym management and digital training experience. Stack: Next.js, TypeScript, Supabase, PostgreSQL, Tailwind CSS, Vercel. 100% serverless architecture with Row Level Security. URL: blackbeltv2.vercel.app
 
-2. Aura v1 - Local-first operational assistant that works offline and prioritizes privacy. Stack: React, TypeScript, Local-first, Vercel. URL: aura-assistent.vercel.app/chat
+2. Aura v1 - Local-first operational assistant that works offline and prioritizes privacy. Stack: React, TypeScript, Local-first, Vercel. URL: aura-assistent.vercel.app
 
 TECH STACK:
 - Frontend: React/Next.js (advanced), TypeScript, Tailwind CSS

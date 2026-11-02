@@ -12,6 +12,20 @@ function Tags({ items }: { items: readonly string[] }) {
   );
 }
 
+const LINKS = {
+  blackbelts: 'https://blackbeltv2.vercel.app',
+  primalwod: 'https://primalwod.com.br',
+  aura: 'https://aura-assistent.vercel.app',
+} as const;
+
+function Visit({ href, label, name }: { href: string; label: string; name: string }) {
+  return (
+    <a className="pf-visit" href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label} ${name}`}>
+      {label} {name} <span aria-hidden="true">↗</span>
+    </a>
+  );
+}
+
 export default function Projects() {
   const { c } = useHome();
   const p = c.projects;
@@ -26,6 +40,7 @@ export default function Projects() {
             <h3 className="pf-pt">Blackbelts</h3>
             <p className="pf-pd">{p.blackbelts.description}</p>
             <Tags items={p.blackbelts.tags} />
+            <Visit href={LINKS.blackbelts} label={p.visit} name="Blackbelts" />
           </div>
           <div className="pf-pv">
             {p.blackbelts.rows.map((r) => (
@@ -42,6 +57,7 @@ export default function Projects() {
             <h3 className="pf-pt">PrimalWOD</h3>
             <p className="pf-pd">{p.primalwod.description}</p>
             <Tags items={p.primalwod.tags} />
+            <Visit href={LINKS.primalwod} label={p.visit} name="PrimalWOD" />
           </div>
           <div className="pf-pv">
             <div className="pf-wodbig" aria-hidden="true">
@@ -55,6 +71,7 @@ export default function Projects() {
             <h3 className="pf-pt">Aura</h3>
             <p className="pf-pd">{p.aura.description}</p>
             <Tags items={p.aura.tags} />
+            <Visit href={LINKS.aura} label={p.visit} name="Aura" />
           </div>
           <div className="pf-pv">
             <div className="pf-aura" role="img" aria-label={p.aura.aria}>

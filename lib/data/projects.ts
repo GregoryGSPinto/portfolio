@@ -174,7 +174,7 @@ export const projects: Project[] = [
     ],
     stack: ['React', 'TypeScript', 'Local-first', 'Vercel'],
     links: {
-      live: 'https://aura-assistent.vercel.app/chat',
+      live: 'https://aura-assistent.vercel.app',
       github: 'https://github.com/GregoryGSPinto/aura_v1',
     },
     featured: true,
