@@ -38,7 +38,7 @@ export default function BlogList({ posts, tags }: BlogListProps) {
         </h1>
         <p className="text-lg max-w-3xl text-text-secondary leading-relaxed">
           {lang === 'pt'
-            ? 'Artigos curtos e tecnicos sobre arquitetura, IA aplicada, qualidade de execucao e as decisoes por tras dos projetos.'
+            ? 'Artigos curtos e técnicos sobre arquitetura, IA aplicada, qualidade de execução e as decisões por tras dos projetos.'
             : 'Short technical articles about architecture, applied AI, execution quality, and the decisions behind the projects.'}
         </p>
       </header>
