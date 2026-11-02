@@ -42,11 +42,11 @@ export default function Projects({ mode = 'home' }: ProjectsProps) {
                 className="font-display text-4xl font-bold leading-[1.05] md:text-6xl"
                 style={{ color: 'var(--text-primary)' }}
               >
-                {lang === 'pt' ? 'Arquitetura, produto e operacao em casos reais' : 'Architecture, product, and operations in real cases'}
+                {lang === 'pt' ? 'Arquitetura, produto e operação em casos reais' : 'Architecture, product, and operations in real cases'}
               </h1>
               <p className="mt-4 max-w-2xl text-base leading-relaxed md:text-lg" style={{ color: 'var(--text-secondary)' }}>
                 {lang === 'pt'
-                  ? 'Uma visao completa dos cases do portfolio, com contexto, papel exercido, escolhas de arquitetura e trade-offs de implementacao.'
+                  ? 'Uma visão completa dos cases do portfólio, com contexto, papel exercido, escolhas de arquitetura e trade-offs de implementação.'
                   : 'A complete view of the portfolio case studies, including context, role, architectural choices, and implementation trade-offs.'}
               </p>
             </div>
@@ -68,7 +68,7 @@ export default function Projects({ mode = 'home' }: ProjectsProps) {
           className="font-display text-4xl md:text-6xl font-bold leading-[1.1] mb-6 whitespace-pre-line"
           style={{ color: 'var(--text-primary)' }}
         >
-          {lang === 'pt' ? 'Cases com\nsubstancia tecnica' : 'Case studies with\ntechnical substance'}
+          {lang === 'pt' ? 'Cases com\nsubstância técnica' : 'Case studies with\ntechnical substance'}
         </motion.h2>
 
         <motion.p
@@ -80,7 +80,7 @@ export default function Projects({ mode = 'home' }: ProjectsProps) {
           style={{ color: 'var(--text-secondary)' }}
         >
           {lang === 'pt'
-            ? 'Cada projeto abaixo explicita contexto, papel exercido, arquitetura escolhida e os trade-offs que sustentam a solucao.'
+            ? 'Cada projeto abaixo explicita contexto, papel exercido, arquitetura escolhida e os trade-offs que sustentam a solução.'
             : 'Each project below makes the context, role, chosen architecture, and the trade-offs supporting the solution explicit.'}
         </motion.p>
 
@@ -116,7 +116,7 @@ export default function Projects({ mode = 'home' }: ProjectsProps) {
                     className="font-mono text-[10px] uppercase tracking-[3px]"
                     style={{ color: 'var(--text-ghost)' }}
                   >
-                    {lang === 'pt' ? 'Arquitetura aplicada a operacao complexa' : 'Architecture applied to complex operations'}
+                    {lang === 'pt' ? 'Arquitetura aplicada a operação complexa' : 'Architecture applied to complex operations'}
                   </span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

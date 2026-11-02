@@ -4,7 +4,7 @@
  *
  * REVIEW: the `adr` texts (context / decision / consequence) are drafts pending the
  * author's approval, and so are the figures taken from the design file
- * ("117 sessions", "Clinics, in construction") and the About timeline.
+ * ("Clinics, in construction") and the About timeline.
  */
 
 const pt = {
@@ -19,10 +19,11 @@ const pt = {
       { id: 'projetos', label: 'Projetos' },
       { id: 'sobre', label: 'Sobre' },
     ],
-    switchLang: 'Mudar para inglês',
+    switchLang: 'Mudar idioma para inglês',
+    prefsLabel: 'Preferências',
     langShort: 'EN',
-    themeToDark: 'Ativar tema escuro',
-    themeToLight: 'Ativar tema claro',
+    themeToDark: 'Alternar tema claro ou escuro',
+    themeToLight: 'Alternar tema claro ou escuro',
   },
   hero: {
     name: 'Gregory Guimarães',
@@ -158,6 +159,7 @@ const pt = {
     },
   },
   projects: {
+    visit: 'Visitar',
     title: 'Projetos',
     blackbelts: {
       description:
@@ -177,7 +179,7 @@ const pt = {
     },
     aura: {
       description:
-        'Agente pessoal controlado por voz, para prospecção e gestão de tarefas. Memória semântica com ciclo de vida completo (V7), alimentada por 117 sessões de conversa mineradas. Roadmap: app web com voz (v0.1), app mobile, servidor dedicado e ecossistema de hardware.',
+        'Agente pessoal controlado por voz, para prospecção e gestão de tarefas. Memória semântica com ciclo de vida completo (V7). Roadmap: app web com voz (v0.1), app mobile, servidor dedicado e ecossistema de hardware.',
       tags: ['Agentes', 'Memória semântica', 'Voz'],
       aria: 'Ilustração do painel da Aura com três níveis de autonomia e o botão Parar',
       stop: 'Parar',
@@ -246,10 +248,11 @@ const en: HomeCopy = {
       { id: 'projetos', label: 'Projects' },
       { id: 'sobre', label: 'About' },
     ],
-    switchLang: 'Switch to Portuguese',
+    switchLang: 'Switch language to Portuguese',
+    prefsLabel: 'Preferences',
     langShort: 'PT',
-    themeToDark: 'Switch to dark theme',
-    themeToLight: 'Switch to light theme',
+    themeToDark: 'Toggle light or dark theme',
+    themeToLight: 'Toggle light or dark theme',
   },
   hero: {
     name: 'Gregory Guimarães',
@@ -385,6 +388,7 @@ const en: HomeCopy = {
     },
   },
   projects: {
+    visit: 'Visit',
     title: 'Projects',
     blackbelts: {
       description:
@@ -404,7 +408,7 @@ const en: HomeCopy = {
     },
     aura: {
       description:
-        'A voice-controlled personal agent for prospecting and task management. Semantic memory with a full lifecycle (V7), fed by 117 mined conversation sessions. Roadmap: web app with voice (v0.1), mobile app, dedicated server and a hardware ecosystem.',
+        'A voice-controlled personal agent for prospecting and task management. Semantic memory with a full lifecycle (V7). Roadmap: web app with voice (v0.1), mobile app, dedicated server and a hardware ecosystem.',
       tags: ['Agents', 'Semantic memory', 'Voice'],
       aria: 'Illustration of the Aura panel with three autonomy levels and the Stop button',
       stop: 'Stop',

@@ -53,25 +53,25 @@ export const projects: Project[] = [
     order: 1,
     title: 'BlackBelt v2',
     subtitle: {
-      pt: 'Plataforma moderna para gestao e experiencia digital em academias',
+      pt: 'Plataforma moderna para gestão e experiência digital em academias',
       en: 'Modern platform for gym management and digital training experience',
     },
     description: {
-      pt: 'Plataforma moderna para gestao e experiencia digital em academias e treinamento, com foco em recorrencia, graduacoes e sinais analiticos.',
+      pt: 'Plataforma moderna para gestão e experiência digital em academias e treinamento, com foco em recorrência, graduações e sinais analíticos.',
       en: 'Modern platform for gym management and digital training experience, focused on recurring revenue, belt progress, and analytics.',
     },
     context: {
-      pt: 'Academias de luta dependiam de planilhas, WhatsApp e sistemas paralelos para gerenciar alunos, graduacoes e conteudo de treino.',
+      pt: 'Academias de luta dependiam de planilhas, WhatsApp e sistemas paralelos para gerenciar alunos, graduações e conteudo de treino.',
       en: 'Martial arts gyms relied on spreadsheets, WhatsApp, and fragmented systems to manage students, belt progressions, and training content.',
     },
     role: {
-      pt: 'Responsavel por estrategia de produto, arquitetura full-stack e modelagem de dominio.',
+      pt: 'Responsável por estratégia de produto, arquitetura full-stack e modelagem de domínio.',
       en: 'Owned product strategy, full-stack architecture, and domain modeling.',
     },
     metrics: [
       { value: '100%', label: { pt: 'Serverless', en: 'Serverless' }, context: { pt: 'Zero servidor gerenciado', en: 'Zero managed servers' } },
-      { value: '<2s', label: { pt: 'First Paint', en: 'First Paint' }, context: { pt: 'Em conexao 4G', en: 'On 4G connection' } },
-      { value: 'RLS', label: { pt: 'Seguranca', en: 'Security' }, context: { pt: 'Row Level Security ativo', en: 'Row Level Security active' } },
+      { value: '<2s', label: { pt: 'First Paint', en: 'First Paint' }, context: { pt: 'Em conexão 4G', en: 'On 4G connection' } },
+      { value: 'RLS', label: { pt: 'Segurança', en: 'Security' }, context: { pt: 'Row Level Security ativo', en: 'Row Level Security active' } },
     ],
     stack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Vercel', 'RLS'],
     links: {
@@ -86,11 +86,11 @@ export const projects: Project[] = [
     image: '/images/projects/blackbelt-v2.jpg',
     relatedSlugs: ['aura-v1'],
     challenge: {
-      pt: 'Criar um sistema unificado que atendesse rotina academica, progressao de alunos e operacao financeira sem virar um painel generico.',
+      pt: 'Criar um sistema unificado que atendesse rotina acadêmica, progressão de alunos e operação financeira sem virar um painel genérico.',
       en: 'Build a unified system for academy routines, student progression, and finance without turning it into a generic admin panel.',
     },
     approach: {
-      pt: 'Estruturei o produto em bounded contexts e usei Supabase para auth, dados e realtime, mantendo velocidade de entrega sem perder governanca.',
+      pt: 'Estruturei o produto em bounded contexts e usei Supabase para auth, dados e realtime, mantendo velocidade de entrega sem perder governança.',
       en: 'I structured the product around bounded contexts and used Supabase for auth, data, and realtime while preserving delivery speed and governance.',
     },
     architecture: {
@@ -98,11 +98,11 @@ export const projects: Project[] = [
       en: 'Next.js with App Router, Supabase as the managed backend, access rules with RLS, and responsive interface with Tailwind CSS.',
     },
     results: {
-      pt: 'Plataforma v2 lancada com arquitetura serverless, custo operacional proximo de zero e experiencia digital moderna para academias.',
+      pt: 'Plataforma v2 lançada com arquitetura serverless, custo operacional próximo de zero e experiência digital moderna para academias.',
       en: 'Platform v2 launched with serverless architecture, near-zero operational cost, and modern digital experience for gyms.',
     },
     outcomeSummary: {
-      pt: 'Posicionei o sistema como produto operacional de nicho, com arquitetura suficiente para crescer sem sobreengenharia desnecessaria.',
+      pt: 'Posicionei o sistema como produto operacional de nicho, com arquitetura suficiente para crescer sem sobreengenharia desnecessária.',
       en: 'I positioned the system as a niche operational product with enough architecture to scale without unnecessary over-engineering.',
     },
     timeline: { pt: '2025 · SaaS para academias', en: '2025 · Gym SaaS platform' },
@@ -126,7 +126,7 @@ export const projects: Project[] = [
       {
         title: { pt: 'Supabase sobre backend custom', en: 'Supabase over custom backend' },
         description: {
-          pt: 'Acelerou entrega e infra, com menos controle de baixo nivel e mais dependencia da plataforma.',
+          pt: 'Acelerou entrega e infra, com menos controle de baixo nível e mais dependência da plataforma.',
           en: 'Accelerated delivery and infrastructure with less low-level control and more platform dependency.',
         },
       },
@@ -142,7 +142,7 @@ export const projects: Project[] = [
       {
         title: { pt: 'Supabase com RLS', en: 'Supabase with RLS' },
         description: {
-          pt: 'Atendeu auth, dados e multi-tenancy com menos friccao operacional.',
+          pt: 'Atendeu auth, dados e multi-tenancy com menos fricção operacional.',
           en: 'Handled auth, data, and multi-tenancy with lower operational friction.',
         },
       },
@@ -157,24 +157,24 @@ export const projects: Project[] = [
       en: 'Local-first operational assistant',
     },
     description: {
-      pt: 'Assistente operacional local-first que funciona offline e prioriza privacidade e autonomia do usuario.',
+      pt: 'Assistente operacional local-first que funciona offline e prioriza privacidade e autonomia do usuário.',
       en: 'Local-first operational assistant that works offline and prioritizes user privacy and autonomy.',
     },
     context: {
-      pt: 'Assistentes de IA dependem de conexao e servidores externos. Em contextos operacionais, a disponibilidade e privacidade dos dados sao prioridade.',
+      pt: 'Assistentes de IA dependem de conexão e servidores externos. Em contextos operacionais, a disponibilidade e privacidade dos dados são prioridade.',
       en: 'AI assistants depend on connection and external servers. In operational contexts, data availability and privacy are the priority.',
     },
     role: {
-      pt: 'Arquiteto e desenvolvedor, responsavel pelo design local-first e implementacao do assistente.',
+      pt: 'Arquiteto e desenvolvedor, responsável pelo design local-first e implementação do assistente.',
       en: 'Architect and developer, responsible for local-first design and assistant implementation.',
     },
     metrics: [
-      { value: 'Local', label: { pt: 'Execucao', en: 'Execution' }, context: { pt: 'Sem dependencia de servidor', en: 'No server dependency' } },
-      { value: 'Offline', label: { pt: 'Disponivel', en: 'Available' }, context: { pt: 'Funciona sem internet', en: 'Works without internet' } },
+      { value: 'Local', label: { pt: 'Execução', en: 'Execution' }, context: { pt: 'Sem dependência de servidor', en: 'No server dependency' } },
+      { value: 'Offline', label: { pt: 'Disponível', en: 'Available' }, context: { pt: 'Funciona sem internet', en: 'Works without internet' } },
     ],
     stack: ['React', 'TypeScript', 'Local-first', 'Vercel'],
     links: {
-      live: 'https://aura-assistent.vercel.app/chat',
+      live: 'https://aura-assistent.vercel.app',
       github: 'https://github.com/GregoryGSPinto/aura_v1',
     },
     featured: true,
@@ -184,19 +184,19 @@ export const projects: Project[] = [
     image: '/images/projects/aura-v1.jpg',
     relatedSlugs: ['blackbelt-v2'],
     challenge: {
-      pt: 'Criar um assistente operacional que funcione localmente, sem dependencia de servidores externos ou conexao constante.',
+      pt: 'Criar um assistente operacional que funcione localmente, sem dependência de servidores externos ou conexão constante.',
       en: 'Create an operational assistant that runs locally without depending on external servers or constant connectivity.',
     },
     approach: {
-      pt: 'Arquitetura local-first com processamento no cliente, persistencia local e sincronizacao oportunista.',
+      pt: 'Arquitetura local-first com processamento no cliente, persistência local e sincronização oportunista.',
       en: 'Local-first architecture with client-side processing, local persistence, and opportunistic synchronization.',
     },
     results: {
-      pt: 'Assistente operacional funcional em modo offline, com privacidade de dados e autonomia completa do usuario.',
+      pt: 'Assistente operacional funcional em modo offline, com privacidade de dados e autonomia completa do usuário.',
       en: 'Functional operational assistant in offline mode, with data privacy and full user autonomy.',
     },
     outcomeSummary: {
-      pt: 'Provei que e possivel entregar assistencia inteligente sem sacrificar privacidade ou disponibilidade.',
+      pt: 'Provei que é possível entregar assistência inteligente sem sacrificar privacidade ou disponibilidade.',
       en: 'I proved that intelligent assistance can be delivered without sacrificing privacy or availability.',
     },
     timeline: { pt: '2025 · Assistente local-first', en: '2025 · Local-first assistant' },
@@ -204,14 +204,14 @@ export const projects: Project[] = [
       {
         title: { pt: 'Local-first', en: 'Local-first' },
         description: {
-          pt: 'Dados e processamento no dispositivo do usuario, sem dependencia externa.',
+          pt: 'Dados e processamento no dispositivo do usuário, sem dependência externa.',
           en: 'Data and processing on the user device, without external dependency.',
         },
       },
       {
         title: { pt: 'Privacidade por design', en: 'Privacy by design' },
         description: {
-          pt: 'Nenhum dado sensivel transita por servidores externos.',
+          pt: 'Nenhum dado sensível transita por servidores externos.',
           en: 'No sensitive data passes through external servers.',
         },
       },
@@ -220,7 +220,7 @@ export const projects: Project[] = [
       {
         title: { pt: 'Local sobre cloud', en: 'Local over cloud' },
         description: {
-          pt: 'Ganho de privacidade e disponibilidade, com limitacao em capacidade de modelos maiores.',
+          pt: 'Ganho de privacidade e disponibilidade, com limitação em capacidade de modelos maiores.',
           en: 'Gains in privacy and availability, with limitations on larger model capabilities.',
         },
       },

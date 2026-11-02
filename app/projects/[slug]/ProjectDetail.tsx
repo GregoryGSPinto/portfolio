@@ -180,7 +180,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
     },
     {
       key: 'approach',
-      label: lang === 'pt' ? 'Solucao' : 'Solution',
+      label: lang === 'pt' ? 'Solução' : 'Solution',
       content: project.approach?.[lang],
     },
     {
@@ -387,7 +387,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <div className="mx-auto max-w-5xl px-6">
           <SectionBlock
             label={lang === 'pt' ? 'Provas do case' : 'Case proof'}
-            title={lang === 'pt' ? 'O que torna este case confiavel' : 'What makes this case credible'}
+            title={lang === 'pt' ? 'O que torna este case confiável' : 'What makes this case credible'}
             index={0}
           >
             <div className="grid gap-4 md:grid-cols-3">
@@ -419,7 +419,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <div className="mx-auto max-w-5xl px-6">
           <SectionBlock
             label="Trade-offs"
-            title={lang === 'pt' ? 'Decisoes e concessoes' : 'Decisions and trade-offs'}
+            title={lang === 'pt' ? 'Decisões e concessões' : 'Decisions and trade-offs'}
             index={0}
           >
             <div className="space-y-4">
@@ -446,8 +446,8 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <section className="py-8 md:py-12">
           <div className="mx-auto max-w-5xl px-6">
             <SectionBlock
-              label={lang === 'pt' ? 'Decisoes tecnicas' : 'Technical decisions'}
-              title={lang === 'pt' ? 'Decisoes tecnicas' : 'Technical decisions'}
+              label={lang === 'pt' ? 'Decisões técnicas' : 'Technical decisions'}
+              title={lang === 'pt' ? 'Decisões técnicas' : 'Technical decisions'}
               index={0}
             >
               <div className="space-y-3">
@@ -504,7 +504,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
                   style={{ background: 'var(--card-bg)', border: '1px solid var(--border-subtle)' }}
                 >
                   <p className="mb-2 font-mono text-[11px] uppercase tracking-[2px]" style={{ color: 'var(--accent)' }}>
-                    {lang === 'pt' ? 'Deploy publico' : 'Public deployment'}
+                    {lang === 'pt' ? 'Deploy público' : 'Public deployment'}
                   </p>
                   <h4 className="mb-2 font-display text-lg" style={{ color: 'var(--text-primary)' }}>
                     {lang === 'pt' ? 'Ver Projeto' : 'View Project'}
@@ -559,7 +559,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <div className="mx-auto max-w-5xl px-6 text-center">
           <p className="mx-auto mb-6 max-w-2xl text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             {lang === 'pt'
-              ? 'Se este case faz sentido para o tipo de operacao ou produto que voce quer estruturar, a proxima conversa ja pode comecar em nivel de arquitetura.'
+              ? 'Se este case faz sentido para o tipo de operação ou produto que você quer estruturar, a próxima conversa ja pode comecar em nível de arquitetura.'
               : 'If this case matches the kind of operation or product you want to structure, the next conversation can already start at the architecture level.'}
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
