@@ -211,6 +211,6 @@ portifolio/
 
 ## Author
 
-**Gregory Guimaraes Pinto** — Senior AI Solutions Architect
+**Gregory Guimaraes Pinto** — Senior AI Solution Architect | Founder @ Verdor
 
 [GitHub](https://github.com/GregoryGSPinto) · [LinkedIn](https://www.linkedin.com/in/mqt-gregory/) · [portfolio-gregory-tau.vercel.app](https://portfolio-gregory-tau.vercel.app)

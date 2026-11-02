@@ -1,15 +1,15 @@
 export const siteConfig = {
   name: 'Gregory Guimarães',
   legalName: 'Gregory Guimarães',
-  title: 'Gregory Guimarães | Senior Solutions Architect, AI and SaaS',
+  title: 'Gregory Guimarães | Senior AI Solution Architect, Founder @ Verdor',
   shortTitle: 'Gregory Guimarães',
   description:
-    'Portfolio of Gregory Guimarães, a senior solutions architect building AI products and vertical SaaS with protected data, embedded payments and agents with clear limits.',
+    'Portfolio of Gregory Guimarães, a senior AI solution architect and founder of Verdor, building AI products and vertical SaaS with protected data, embedded payments and agents with clear limits.',
   url: 'https://portfolio-gregory-tau.vercel.app',
   locale: 'en_US',
   alternateLocale: 'pt_BR',
   ogImage:
-    '/api/og?title=Gregory%20Guimar%C3%A3es&subtitle=Senior%20Solutions%20Architect',
+    '/api/og?title=Gregory%20Guimar%C3%A3es&subtitle=Senior%20AI%20Solution%20Architect',
   email: 'gregoryguimaraes12@outlook.com',
   contactEmail: 'gregoryguimaraes12@gmail.com',
   links: {

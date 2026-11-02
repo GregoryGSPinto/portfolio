@@ -2,7 +2,7 @@ export const personalInfo = {
   name: 'Gregory Guimarães',
   firstName: 'Gregory',
   lastName: 'Guimarães',
-  role: 'AI Solutions Architect',
+  role: 'Founder & Solution Architect, Verdor',
   email: 'gregoryguimaraes12@outlook.com',
   phone: '+55 31 98357-4530',
   phoneTel: 'tel:+5531983574530',
@@ -135,13 +135,13 @@ export const techStack = {
 
 export const timelineItems = [
   {
-    year: '2024',
+    year: '2026',
     highlight: true,
-    role: { pt: 'AI Solutions Architect', en: 'AI Solutions Architect' },
-    company: { pt: 'Freelance', en: 'Freelance' },
+    role: { pt: 'Founder & Solution Architect', en: 'Founder & Solution Architect' },
+    company: { pt: 'Verdor', en: 'Verdor' },
     desc: {
-      pt: 'Arquitetura de software orientada a produto. Plataformas como BlackBelt e Aura com DDD, Event Sourcing, AI/ML.',
-      en: 'Product-oriented software architecture. Platforms like BlackBelt and Aura with DDD, Event Sourcing, AI/ML.',
+      pt: 'Fundador da Verdor, empresa de SaaS vertical. Arquitetura de produtos multi-tenant (Next.js, TypeScript, Supabase, Capacitor) e agentes de IA (Python, FastAPI). Desde fev. de 2026.',
+      en: 'Founder of Verdor, a vertical SaaS company. Architecture of multi-tenant products (Next.js, TypeScript, Supabase, Capacitor) and AI agents (Python, FastAPI). Since Feb 2026.',
     },
   },
 ];
