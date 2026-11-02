@@ -65,6 +65,23 @@ export const productShows: ProductShow[] = [
         },
       },
       {
+        id: 'administrador',
+        demo: true,
+        desktop: img('blackbelts', 'administrador-desktop', 1440, 900),
+        text: {
+          pt: {
+            label: 'Administrador',
+            caption: 'Gestão de turmas da academia: turmas ativas, matriculados por turma e horários da semana.',
+            altDesktop: 'Tela Gestão de turmas do administrador no Blackbelts no computador: seis turmas ativas e matriculados por turma',
+          },
+          en: {
+            label: 'Administrator',
+            caption: 'Gym class management: active classes, enrolled students per class and the weekly schedule.',
+            altDesktop: 'Blackbelts administrator Class management screen on desktop: six active classes and enrolled students per class',
+          },
+        },
+      },
+      {
         id: 'professor',
         demo: true,
         desktop: img('blackbelts', 'professor-desktop', 1440, 900),
@@ -101,17 +118,40 @@ export const productShows: ProductShow[] = [
       {
         id: 'aluno',
         demo: true,
-        mobile: img('blackbelts', 'aluno-mobile', 340, 556),
+        desktop: img('blackbelts', 'aluno-desktop', 1440, 900),
+        mobile: img('blackbelts', 'aluno-mobile', 1170, 2532),
         text: {
           pt: {
             label: 'Aluno adulto',
-            caption: 'Tela Meu treino do app do aluno: continue a treinar, faixa atual e próxima aula.',
-            altMobile: 'App do aluno do Blackbelts: Continue a treinar, faixa azul e próxima aula',
+            caption: 'Início do app do aluno: próxima aula, sequência, frequência, graduação e a semana de treinos.',
+            altDesktop: 'Início do aluno adulto no Blackbelts no computador: próxima aula, sequência de aulas, frequência e graduação',
+            altMobile: 'Início do aluno adulto no Blackbelts no celular: próxima aula, sequência e frequência',
           },
           en: {
             label: 'Adult student',
-            caption: 'My training screen in the student app: keep training, current belt and next class.',
-            altMobile: 'Blackbelts student app: Keep training, blue belt and next class',
+            caption: 'Student app home: next class, streak, attendance, belt progress and the training week.',
+            altDesktop: 'Blackbelts adult student home on desktop: next class, class streak, attendance and belt progress',
+            altMobile: 'Blackbelts adult student home on mobile: next class, streak and attendance',
+          },
+        },
+      },
+      {
+        id: 'teen',
+        demo: true,
+        desktop: img('blackbelts', 'teen-desktop', 1440, 900),
+        mobile: img('blackbelts', 'teen-mobile', 1170, 2532),
+        text: {
+          pt: {
+            label: 'Teen',
+            caption: 'Início do módulo Teen: nível, XP, faixa e conquistas desbloqueadas, com responsável vinculado.',
+            altDesktop: 'Início do módulo Teen do Blackbelts no computador: nível, XP, faixa e conquistas',
+            altMobile: 'Início do módulo Teen do Blackbelts no celular: nível, XP e conquistas',
+          },
+          en: {
+            label: 'Teen',
+            caption: 'Teen module home: level, XP, belt and unlocked achievements, with a linked guardian.',
+            altDesktop: 'Blackbelts Teen module home on desktop: level, XP, belt and achievements',
+            altMobile: 'Blackbelts Teen module home on mobile: level, XP and achievements',
           },
         },
       },
@@ -119,19 +159,19 @@ export const productShows: ProductShow[] = [
         id: 'kids',
         demo: true,
         desktop: img('blackbelts', 'kids-desktop', 1440, 900),
-        mobile: img('blackbelts', 'kids-mobile', 780, 1688),
+        mobile: img('blackbelts', 'kids-mobile', 1170, 2532),
         text: {
           pt: {
             label: 'Aluno Kids',
-            caption: 'Início do módulo Kids: aula do dia, faixa, figurinhas e conquistas.',
-            altDesktop: 'Início do módulo Kids do Blackbelts no computador, com mascote de panda, aula do dia e conquistas',
-            altMobile: 'Início do módulo Kids do Blackbelts no celular, com mascote de panda e aula do dia',
+            caption: 'Tela Minha Faixa do módulo Kids: faixa atual, próxima faixa e a caminhada do aluno, com mascote de panda.',
+            altDesktop: 'Tela Minha Faixa do módulo Kids do Blackbelts no computador, com mascote de panda, faixa atual e caminhada',
+            altMobile: 'Tela Minha Faixa do módulo Kids do Blackbelts no celular, com mascote de panda e faixa atual',
           },
           en: {
             label: 'Kids student',
-            caption: 'Kids module home: today’s class, belt, stickers and achievements.',
-            altDesktop: 'Blackbelts Kids module home on desktop, with a panda mascot, today’s class and achievements',
-            altMobile: 'Blackbelts Kids module home on mobile, with a panda mascot and today’s class',
+            caption: 'Kids module My Belt screen: current belt, next belt and the student’s journey, with a panda mascot.',
+            altDesktop: 'Blackbelts Kids module My Belt screen on desktop, with a panda mascot, current belt and journey',
+            altMobile: 'Blackbelts Kids module My Belt screen on mobile, with a panda mascot and current belt',
           },
         },
       },
@@ -261,6 +301,26 @@ export const productShows: ProductShow[] = [
             caption: 'Three autonomy levels: acts alone, asks for your touch, and never acts without you.',
             altDesktop: 'Trust section of the Aura site on desktop: three autonomy levels',
             altMobile: 'Trust section of the Aura site on mobile: three autonomy levels',
+          },
+        },
+      },
+      {
+        id: 'demo',
+        demo: true,
+        desktop: img('aura', 'demo-desktop', 1440, 900),
+        mobile: img('aura', 'demo-mobile', 1170, 2532),
+        text: {
+          pt: {
+            label: 'Demonstração',
+            caption: 'Tela de demonstração com dados fictícios: conversa, níveis de autonomia e lista de tarefas.',
+            altDesktop: 'Tela de demonstração da Aura no computador: conversa com rascunho de e-mail, três níveis de autonomia e tarefas de hoje',
+            altMobile: 'Tela de demonstração da Aura no celular: conversa com rascunho de e-mail e botões Enviar e Ajustar',
+          },
+          en: {
+            label: 'Demo',
+            caption: 'Demo screen with fictional data: conversation, autonomy levels and a task list.',
+            altDesktop: 'Aura demo screen on desktop: a conversation with an email draft, three autonomy levels and today’s tasks',
+            altMobile: 'Aura demo screen on mobile: a conversation with an email draft and Send and Adjust buttons',
           },
         },
       },
