@@ -5,7 +5,7 @@ export const siteConfig = {
   shortTitle: 'Gregory Guimarães',
   description:
     'Portfolio of Gregory Guimarães, a senior solutions architect building AI products and vertical SaaS with protected data, embedded payments and agents with clear limits.',
-  url: 'https://gregorypinto.dev',
+  url: 'https://portfolio-gregory-tau.vercel.app',
   locale: 'en_US',
   alternateLocale: 'pt_BR',
   ogImage:

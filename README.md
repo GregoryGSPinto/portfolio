@@ -9,9 +9,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Framer Motion 12](https://img.shields.io/badge/Framer_Motion-12-FF0055?logo=framer&logoColor=white)](https://www.framer.com/motion/)
-[![Vercel](https://img.shields.io/badge/Vercel-Deployed-000?logo=vercel)](https://gregorypinto.dev)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-000?logo=vercel)](https://portfolio-gregory-tau.vercel.app)
 
-[Live Site](https://gregorypinto.dev) · [Source Architecture](#architecture)
+[Live Site](https://portfolio-gregory-tau.vercel.app) · [Source Architecture](#architecture)
 
 </div>
 
@@ -213,4 +213,4 @@ portifolio/
 
 **Gregory Guimaraes Pinto** — Senior AI Solutions Architect
 
-[GitHub](https://github.com/GregoryGSPinto) · [LinkedIn](https://www.linkedin.com/in/mqt-gregory/) · [gregorypinto.dev](https://gregorypinto.dev)
+[GitHub](https://github.com/GregoryGSPinto) · [LinkedIn](https://www.linkedin.com/in/mqt-gregory/) · [portfolio-gregory-tau.vercel.app](https://portfolio-gregory-tau.vercel.app)
