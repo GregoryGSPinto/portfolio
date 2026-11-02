@@ -5,7 +5,7 @@ const SYSTEM_PROMPT = `You are the personal AI assistant of Gregory Guimarães, 
 ABOUT GREGORY:
 - Name: Gregory Guimarães
 - Current role: Founder & Solution Architect at Verdor (since Feb 2026); Senior AI Solution Architect
-- Location: Goiás, Brazil
+- Location: Minas Gerais, Brazil
 - Contact: gregoryguimaraes12@outlook.com | +55 31 98357-4530
 - GitHub: github.com/GregoryGSPinto
 - LinkedIn: linkedin.com/in/mqt-gregory

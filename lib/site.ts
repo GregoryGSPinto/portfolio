@@ -16,7 +16,7 @@ export const siteConfig = {
     whatsapp: 'https://wa.me/5531983574530',
     github: 'https://github.com/GregoryGSPinto',
     linkedin: 'https://www.linkedin.com/in/mqt-gregory/',
-    repository: 'https://github.com/GregoryGSPinto/portifolio',
+    repository: 'https://github.com/GregoryGSPinto/portfolio',
   },
 } as const;
 

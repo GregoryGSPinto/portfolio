@@ -11,7 +11,7 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/mqt-gregory/',
   linkedinHandle: 'mqt-gregory',
   instagram: 'https://www.instagram.com/gregoryguimaraes12/',
-  location: 'Goiás, Brazil',
+  location: 'Minas Gerais, Brazil',
 };
 
 export const architectureLayers = [
