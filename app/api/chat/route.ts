@@ -1,59 +1,75 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { CANARY, SYSTEM_PROMPT } from '@/lib/chat/prompt';
+import {
+  MAX_BODY_BYTES,
+  MAX_OUTPUT_TOKENS,
+  MESSAGES,
+  checkAndCount,
+  clientIp,
+  isBlocked,
+  isSameSite,
+  looksLeaked,
+  parseBody,
+  type Lang,
+} from '@/lib/chat/guard';
 
-const SYSTEM_PROMPT = `You are the personal AI assistant of Gregory Guimarães, integrated into his portfolio website. ALWAYS respond professionally, concisely and accurately.
+// Public demo endpoint. It calls the model with a fixed prompt and the visitor's messages only:
+// no tools, no file/database/API access. The only environment variables it reads are
+// CHAT_ENABLED and ANTHROPIC_API_KEY. Conversations are not stored and message text is never logged.
 
-ABOUT GREGORY:
-- Name: Gregory Guimarães
-- Current role: Founder & Solution Architect at Verdor (since Feb 2026); Senior AI Solution Architect
-- Location: Minas Gerais, Brazil
-- Contact: gregoryguimaraes12@outlook.com | +55 31 98357-4530
-- GitHub: github.com/GregoryGSPinto
-- LinkedIn: linkedin.com/in/mqt-gregory
+export const runtime = 'nodejs';
 
-MAIN PROJECTS:
-1. BlackBelt v2 - Modern platform for gym management and digital training experience. Stack: Next.js, TypeScript, Supabase, PostgreSQL, Tailwind CSS, Vercel. 100% serverless architecture with Row Level Security. URL: blackbeltv2.vercel.app
+const MODEL = 'claude-haiku-5-5';
 
-2. Aura (in development) - Personal AI agent with tiered autonomy: every tool call passes a governance gate (L1 runs freely, L2 one approval, L3 two approvals), with audit log and swappable LLM providers. Stack: Python, FastAPI, React, TypeScript.
-
-TECH STACK:
-- Frontend: React/Next.js (advanced), TypeScript, Tailwind CSS
-- Backend: Node.js, Python, REST APIs, Edge Functions
-- Infra: Supabase, PostgreSQL, Vercel, Git/CI-CD
-- AI: Claude API, OpenAI API, RAG concepts, prompt engineering
-- Leadership: System Design, Code Review, Solution Architecture, Mentoring
-
-EXPERIENCE:
-- Feb 2026-Present: Founder & Solution Architect, Verdor. Founded Verdor, a vertical SaaS company; designs and builds multi-tenant products (Next.js, TypeScript, Supabase, Capacitor, Asaas payments) and AI agents (Python, FastAPI).
-
-RULES:
-- Respond in the same language as the question
-- Maximum 3-4 sentences per response
-- If you don't know something, suggest direct contact via email
-- Do not invent information
-- Professional but friendly
-- Availability: open for technical leadership, consulting and challenging projects
-- Pricing: suggest direct contact to discuss scope`;
-
-interface ChatMessage {
-  role: 'user' | 'assistant';
-  content: string;
+function reply(status: number, lang: Lang, key: keyof (typeof MESSAGES)['en'], retryAfter?: string) {
+  const headers: Record<string, string> = { 'Cache-Control': 'no-store' };
+  if (retryAfter) headers['Retry-After'] = retryAfter;
+  return NextResponse.json({ error: key, message: MESSAGES[lang][key] }, { status, headers });
 }
 
 export async function POST(request: NextRequest) {
+  let lang: Lang = 'en';
   try {
-    const { messages } = (await request.json()) as {
-      messages: ChatMessage[];
-    };
-
+    // Feature flag and key: unavailable if either is missing.
     const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: 'API key not configured' },
-        { status: 500 }
-      );
+    if (process.env.CHAT_ENABLED !== 'true' || !apiKey) {
+      return reply(503, lang, 'unavailable');
     }
 
-    const recentMessages = messages.slice(-10);
+    // Same-site only.
+    if (!isSameSite(request.headers.get('origin'), request.headers.get('host'))) {
+      return reply(403, lang, 'invalid');
+    }
+
+    // Size and shape.
+    const len = Number(request.headers.get('content-length') ?? '0');
+    if (len > MAX_BODY_BYTES) return reply(413, lang, 'invalid');
+    const text = await request.text();
+    if (text.length > MAX_BODY_BYTES) return reply(413, lang, 'invalid');
+    let raw: unknown;
+    try {
+      raw = JSON.parse(text);
+    } catch {
+      return reply(400, lang, 'invalid');
+    }
+    const parsed = parseBody(raw);
+    if (!parsed.ok) return reply(400, lang, 'invalid');
+    lang = parsed.lang;
+
+    // Rate limits (per IP and global daily cap).
+    const limit = checkAndCount(clientIp(request.headers));
+    if (limit !== 'ok') {
+      return reply(429, lang, 'limited', limit === 'ip' ? '60' : undefined);
+    }
+
+    // Obvious extraction or injection attempts are refused without calling the model.
+    const lastUser = parsed.messages[parsed.messages.length - 1].content;
+    if (isBlocked(lastUser)) {
+      return NextResponse.json(
+        { message: MESSAGES[lang].refusal },
+        { headers: { 'Cache-Control': 'no-store' } },
+      );
+    }
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -63,33 +79,44 @@ export async function POST(request: NextRequest) {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 300,
+        model: MODEL,
+        max_tokens: MAX_OUTPUT_TOKENS,
         system: SYSTEM_PROMPT,
-        messages: recentMessages.map((m) => ({
-          role: m.role,
-          content: m.content,
-        })),
+        messages: parsed.messages,
       }),
+      signal: AbortSignal.timeout(20_000),
     });
 
     if (!response.ok) {
-      await response.text();
+      // Covers invalid key, provider rate limits and quota. Nothing from the provider is exposed.
+      console.warn('[chat] upstream_status', response.status);
+      return reply(503, lang, 'unavailable');
+    }
+
+    const data = (await response.json()) as { content?: { type?: string; text?: string }[] };
+    const answer = (data.content ?? [])
+      .filter((b) => b.type === 'text' && typeof b.text === 'string')
+      .map((b) => b.text)
+      .join('')
+      .trim();
+
+    if (!answer || looksLeaked(answer, CANARY)) {
       return NextResponse.json(
-        { error: 'Failed to get AI response' },
-        { status: 502 }
+        { message: MESSAGES[lang].refusal },
+        { headers: { 'Cache-Control': 'no-store' } },
       );
     }
 
-    const data = await response.json();
-    const assistantMessage =
-      data.content?.[0]?.text || 'Sorry, I could not generate a response.';
-
-    return NextResponse.json({ message: assistantMessage });
-  } catch {
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      { message: answer.slice(0, 2000) },
+      { headers: { 'Cache-Control': 'no-store' } },
     );
+  } catch {
+    console.warn('[chat] error');
+    return reply(503, lang, 'unavailable');
   }
+}
+
+export function GET() {
+  return NextResponse.json({ error: 'method_not_allowed' }, { status: 405 });
 }

@@ -14,14 +14,14 @@ import Contact from '@/components/home/Contact';
 const AIChatbot = dynamic(() => import('@/components/AIChatbot'), { ssr: false });
 
 interface HomePageProps {
+  chatEnabled: boolean;
   blogPosts: {
     pt: PostTeaser[];
     en: PostTeaser[];
   };
 }
 
-export default function HomePage({ blogPosts }: HomePageProps) {
-  const chatbotEnabled = process.env.NEXT_PUBLIC_CHATBOT_ENABLED === 'true';
+export default function HomePage({ blogPosts, chatEnabled }: HomePageProps) {
 
   return (
     <>
@@ -36,7 +36,7 @@ export default function HomePage({ blogPosts }: HomePageProps) {
         <About />
         <Contact />
       </main>
-      {chatbotEnabled ? <AIChatbot /> : null}
+      {chatEnabled ? <AIChatbot /> : null}
     </>
   );
 }

@@ -109,7 +109,7 @@ Client-side language context with automatic browser detection. Toggle persisted 
 Three-state theme cycle with an inline blocking script that reads `localStorage` before first paint — eliminating flash of unstyled content. CSS custom properties (40+ tokens per theme) enable instant switching. A `theme-transition` class is added after hydration to enable smooth color transitions. `prefers-color-scheme` media query provides a fallback for users without JavaScript.
 
 ### AI Assistant
-Floating chatbot powered by Claude Sonnet, conditionally rendered via `NEXT_PUBLIC_CHATBOT_ENABLED`. Features bilingual conversation, pre-built suggestion chips, typing indicator with bouncing dots, and a 10-message sliding context window. Accessible with proper `aria-label` attributes.
+Public chat demo powered by Claude (fixed prompt, no tools, rate-limited), conditionally rendered via `CHAT_ENABLED`. Features bilingual conversation, pre-built suggestion chips, typing indicator with bouncing dots, and a 6-exchange context window. Accessible with proper `aria-label` attributes.
 
 ### SEO Pipeline
 - **JSON-LD**: Person, Website, BlogPosting, and CreativeWork schemas injected in `<head>`
@@ -180,7 +180,7 @@ pnpm start
 | `RESEND_API_KEY` | Email delivery for contact form | Optional (graceful fallback) |
 | `CONTACT_EMAIL` | Override recipient email | Optional |
 | `ANTHROPIC_API_KEY` | Claude API for AI chatbot | Optional |
-| `NEXT_PUBLIC_CHATBOT_ENABLED` | Enable floating AI assistant | Optional |
+| `CHAT_ENABLED` | Show the public chat demo (`true` to enable; off when absent) | Optional |
 | `GITHUB_TOKEN` | Higher rate limit for GitHub stack API | Optional |
 
 ---

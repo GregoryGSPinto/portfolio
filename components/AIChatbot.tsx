@@ -44,27 +44,30 @@ export default function AIChatbot() {
     if (!content.trim() || isLoading) return;
 
     setHasInteracted(true);
-    const userMessage: Message = { role: 'user', content: content.trim() };
+    const userMessage: Message = { role: 'user', content: content.trim().slice(0, 500) };
     const newMessages = [...messages, userMessage];
     setMessages(newMessages);
     setInput('');
     setIsLoading(true);
 
     try {
+      // Only the last 6 exchanges plus the new message are sent.
+      const recent = newMessages.slice(-13);
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages, language: lang }),
+        body: JSON.stringify({ messages: recent, language: lang }),
       });
 
       const data = await res.json();
 
-      if (data.error) {
+      if (data.error || typeof data.message !== 'string') {
+        // Error and refusal messages are shown as assistant turns.
         setMessages([
           ...newMessages,
           {
             role: 'assistant',
-            content: chat.errorProcess,
+            content: typeof data.message === 'string' ? data.message : chat.errorProcess,
           },
         ]);
       } else {
@@ -267,6 +270,7 @@ export default function AIChatbot() {
                   ref={textareaRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
+                  maxLength={500}
                   onKeyDown={handleKeyDown}
                   placeholder={chat.placeholder}
                   rows={1}
