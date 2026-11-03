@@ -194,71 +194,6 @@
 .pf-facts dt { font-size: 14.5px; color: var(--mu); }
 .pf-facts dd { margin: 0; font-size: 18px; font-weight: 500; }
 
-/* Stage */
-.pf-stage-sec { padding-top: clamp(64px, 8vw, 104px); }
-.pf-stage { position: relative; padding-bottom: 56px; }
-.pf-win {
-  width: calc(100% - 96px);
-  display: flex;
-  background: var(--surface);
-  border: 1px solid var(--ln);
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 40px 90px var(--shd);
-}
-.pf-side { flex: 0 0 196px; border-right: 1px solid var(--ln); background: var(--sheet); padding: 22px 14px; display: flex; flex-direction: column; gap: 6px; }
-.pf-side b { font-family: var(--disp); font-weight: 700; font-size: 26px; padding: 0 10px 16px; }
-.pf-side span { padding: 11px 12px; border-radius: 12px; color: var(--mu); font-size: 15px; }
-.pf-side span.on { background: var(--asoft); color: var(--aink); font-weight: 600; }
-.pf-side small { font-size: 12.5px; }
-.pf-wmain { flex: 1; min-width: 0; padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 20px; }
-.pf-wbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
-.pf-tabs { display: flex; gap: 8px; }
-.pf-tabs span { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--ln); color: var(--mu); font-size: 14.5px; }
-.pf-tabs span.on { background: var(--asoft); border-color: var(--asoft); color: var(--aink); font-weight: 600; }
-.pf-upbtn { padding: 9px 18px; border-radius: 999px; background: var(--gold); color: var(--ongold); font-weight: 600; font-size: 14.5px; }
-.pf-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.pf-up { grid-column: auto; border: 1.5px solid var(--gold); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: var(--sheet); }
-.pf-up b { font-size: 15px; font-weight: 600; }
-.pf-up span { font-size: 13.5px; color: var(--mu); }
-.pf-bar { height: 8px; border-radius: 4px; background: var(--ln); }
-.pf-bar i { display: block; width: 62%; height: 8px; border-radius: 4px; background: var(--gold); }
-.pf-vid { display: flex; flex-direction: column; gap: 10px; }
-.pf-thumb { height: 104px; border-radius: 14px; background: var(--sheet); border: 1px solid var(--ln); display: flex; align-items: center; justify-content: center; }
-.pf-thumb span { width: 36px; height: 36px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; }
-.pf-line { height: 10px; border-radius: 5px; background: var(--ln); }
-.pf-ph {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 232px;
-  height: 468px;
-  border: 7px solid var(--ln2);
-  border-radius: 38px;
-  background: #FFF6E8;
-  color: #3B2A1A;
-  overflow: hidden;
-  box-shadow: 0 30px 70px var(--shd);
-}
-.pf-ph-in { padding: 26px 18px 18px; display: flex; flex-direction: column; gap: 14px; height: 100%; }
-.pf-ph-title { font-family: var(--kids); font-weight: 700; font-size: 21px; line-height: 1.1; }
-.pf-ph-sub { font-family: var(--kids); font-weight: 600; font-size: 16px; margin-top: 10px; }
-.pf-mascots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 8px; padding-top: 6px; }
-.pf-m { position: relative; width: 42px; height: 42px; margin: 6px auto 0; }
-.pf-m i { position: absolute; display: block; }
-.pf-m .ear { top: -6px; width: 15px; height: 15px; }
-.pf-m .ear.l { left: 1px; }
-.pf-m .ear.r { right: 1px; }
-.pf-m .face { top: 0; left: 0; width: 42px; height: 42px; border-radius: 50%; }
-.pf-m .eye { top: 16px; width: 6px; height: 6px; border-radius: 50%; background: #2B1B10; }
-.pf-m .eye.l { left: 11px; }
-.pf-m .eye.r { right: 11px; }
-.pf-sw { display: flex; gap: 12px; }
-.pf-sw i { display: block; width: 34px; height: 34px; border-radius: 50%; box-shadow: 0 0 0 2px #FFF6E8 inset; }
-.pf-rise { animation: pf-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-.pf-rise2 { animation-delay: 0.2s; }
-@keyframes pf-rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
-
 /* Capabilities */
 .pf-caps-sec { padding-top: clamp(56px, 7vw, 96px); }
 .pf-caps { display: flex; flex-wrap: wrap; }
@@ -410,14 +345,6 @@
 .pf-badge { padding: 6px 12px; border-radius: 999px; font-size: 13.5px; font-weight: 600; background: var(--asoft); color: var(--aink); }
 .pf-badge.ok { background: var(--oksoft); color: var(--okc); }
 .pf-badge.l3 { background: transparent; border: 1px solid var(--ln2); color: var(--mu); }
-.pf-house { display: flex; flex-direction: column; gap: 12px; }
-.pf-cams { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.pf-cam { position: relative; height: 150px; border-radius: 16px; background: var(--surface); border: 1px solid var(--ln); overflow: hidden; }
-.pf-cam > span { position: absolute; left: 12px; bottom: 10px; font-size: 13px; color: var(--mu); }
-.pf-det { position: absolute; left: 36%; top: 30%; width: 26%; height: 56%; border: 2px solid var(--gold); border-radius: 6px; }
-.pf-det span { position: absolute; left: -2px; top: -2px; padding: 2px 8px; background: var(--gold); color: var(--ongold); font-size: 12px; font-weight: 600; border-radius: 4px 0 6px 0; }
-.pf-notice { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 16px; background: var(--asoft); color: var(--aink); font-size: 15.5px; font-weight: 500; }
-.pf-notice svg { flex: none; }
 
 /* Writing */
 .pf-post { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px; padding: 36px 0; border-top: 1px solid var(--ln); border-bottom: 1px solid var(--ln); }
@@ -479,19 +406,11 @@
   .pf-ps-slide[data-has-mobile='true'] .pf-ps-m,
   .pf-ps-slide[data-has-desktop='false'] .pf-ps-m { left: 50%; right: auto; transform: translateX(-50%); bottom: 4%; height: 92%; }
   .pf-ps-slide[data-has-mobile='false'] .pf-ps-d { top: 50%; transform: translate(-50%, -50%); max-height: 90%; }
-  .pf-win { width: 100%; }
-  .pf-side { display: none; }
-  .pf-ph { position: static; margin: 28px auto 0; }
-  .pf-grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .pf-up { grid-column: 1 / -1; }
-  .pf-stage { padding-bottom: 0; }
-  .pf-wmain { padding: 16px; }
   .pf-panel { padding: 20px; }
   .pf-pj { padding: 48px 0; }
   .pf-k { flex-basis: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .pf-rise { animation: none; }
   .pf-btn, .pf-nl a, .pf-tool { transition: none; }
   .pf-btn:hover { transform: none; }
   .pf-ps-slide, .pf-ps-dot span { transition: none; }

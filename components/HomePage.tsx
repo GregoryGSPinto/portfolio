@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 import Hero from '@/components/home/Hero';
-import Stage from '@/components/home/Stage';
 import Capabilities from '@/components/home/Capabilities';
 import Architecture from '@/components/home/Architecture';
 import Decisions from '@/components/home/Decisions';
@@ -28,7 +27,6 @@ export default function HomePage({ blogPosts }: HomePageProps) {
     <>
       <main id="main-content" className="pf-main">
         <Hero />
-        <Stage />
         <Capabilities />
         <Architecture />
         <Decisions />

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Barlow, Barlow_Condensed, Baloo_2, IBM_Plex_Mono } from 'next/font/google';
+import { Barlow, Barlow_Condensed, IBM_Plex_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { LangProvider } from '@/context/LangContext';
@@ -30,14 +30,6 @@ const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-plex-mono',
-  display: 'swap',
-});
-
-// Only used inside the Kids phone mockup
-const baloo = Baloo_2({
-  subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-baloo',
   display: 'swap',
 });
 
@@ -131,7 +123,7 @@ export default function RootLayout({
       lang="pt-BR"
       translate="no"
       suppressHydrationWarning
-      className={`${barlowCondensed.variable} ${barlow.variable} ${plexMono.variable} ${baloo.variable}`}
+      className={`${barlowCondensed.variable} ${barlow.variable} ${plexMono.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

@@ -99,7 +99,6 @@
   --disp: var(--font-barlow-condensed), 'Arial Narrow', sans-serif;
   --sans: var(--font-barlow), system-ui, sans-serif;
   --mono: var(--font-plex-mono), ui-monospace, monospace;
-  --kids: var(--font-baloo), var(--font-barlow), sans-serif;
 
   /* Aliases kept for /blog, /projects and other pre-redesign components */
   --bg-primary: var(--bg);
