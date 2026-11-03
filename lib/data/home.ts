@@ -38,18 +38,6 @@ const pt = {
       { label: 'Base', value: 'Minas Gerais, Brasil' },
     ],
   },
-  stage: {
-    aria: 'Ilustração do Blackbelts: biblioteca de vídeos com upload em andamento e o módulo Kids no celular',
-    side: ['Biblioteca', 'Financeiro', 'Loja'],
-    soon: 'em breve',
-    tabs: ['Adulto', 'Kids', 'Teen'],
-    upload: 'Enviar vídeo',
-    uploading: 'Enviando vídeo',
-    step: 'Etapa 3 de 4',
-    tus: 'Upload retomável (TUS)',
-    mascot: 'Escolha seu mascote',
-    color: 'Sua cor',
-  },
   capabilities: {
     heading: 'Capacidades',
     items: [
@@ -123,14 +111,6 @@ const pt = {
         consequence:
           'O limite vive na arquitetura, não em configuração: ações de maior risco exigem um humano, e o agente tem parada escalonada de processos (SIGTERM e, se preciso, SIGKILL).',
       },
-      {
-        id: 'ADR-05',
-        title: 'Atuação física sempre manual',
-        context: 'Câmeras com detecção por IA convivem com portões e fechaduras.',
-        decision:
-          'Modelo de ameaças primeiro. Detecção com Frigate NVR e câmeras PTZ integrada à Aura, e atuação física sempre manual (L3).',
-        consequence: 'A IA observa e alerta; quem aciona é uma pessoa.',
-      },
     ],
   },
   gallery: {
@@ -188,16 +168,6 @@ const pt = {
         { id: 'L2', title: 'Enviar comunicações', sub: 'Espera a sua aprovação', badge: 'Com aprovação' },
         { id: 'L3', title: 'Dinheiro, lei e reputação', sub: 'Sempre com você', badge: 'Só humano' },
       ],
-    },
-    house: {
-      title: 'Casa segura',
-      description:
-        'Sistema de segurança residencial projetado a partir do modelo de ameaças, e não do catálogo de câmeras. Frigate NVR, câmeras PTZ e detecção integrada à Aura, com atuação física sempre manual.',
-      tags: ['Frigate NVR', 'PTZ', 'Aura'],
-      aria: 'Ilustração do painel de câmeras com uma detecção destacada e o aviso de acionamento manual',
-      detection: 'detecção',
-      cameras: ['Câmera 1', 'Câmera PTZ', 'Câmera 3', 'Câmera 4'],
-      notice: 'Portão e fechaduras: acionamento sempre manual',
     },
     clinics: {
       title: 'Clínicas',
@@ -266,18 +236,6 @@ const en: HomeCopy = {
       { label: 'Solo founder', value: 'Verdor' },
       { label: 'Based in', value: 'Minas Gerais, Brazil' },
     ],
-  },
-  stage: {
-    aria: 'Illustration of Blackbelts: a video library with an upload in progress and the Kids module on a phone',
-    side: ['Library', 'Finance', 'Store'],
-    soon: 'soon',
-    tabs: ['Adult', 'Kids', 'Teen'],
-    upload: 'Upload video',
-    uploading: 'Uploading video',
-    step: 'Step 3 of 4',
-    tus: 'Resumable upload (TUS)',
-    mascot: 'Pick your mascot',
-    color: 'Your color',
   },
   capabilities: {
     heading: 'Capabilities',
@@ -352,14 +310,6 @@ const en: HomeCopy = {
         consequence:
           'The limit lives in the architecture, not in configuration: higher-risk actions require a human, and the agent has a staged process stop (SIGTERM and, if needed, SIGKILL).',
       },
-      {
-        id: 'ADR-05',
-        title: 'Physical actuation always manual',
-        context: 'Cameras with AI detection coexist with gates and locks.',
-        decision:
-          'Threat model first. Detection with Frigate NVR and PTZ cameras integrated with Aura, and physical actuation always manual (L3).',
-        consequence: 'The AI observes and alerts; a person triggers.',
-      },
     ],
   },
   gallery: {
@@ -417,16 +367,6 @@ const en: HomeCopy = {
         { id: 'L2', title: 'Send communications', sub: 'Waits for your approval', badge: 'Needs approval' },
         { id: 'L3', title: 'Money, law and reputation', sub: 'Always with you', badge: 'Human only' },
       ],
-    },
-    house: {
-      title: 'Secure home',
-      description:
-        'A home security system designed from the threat model, not from a camera catalog. Frigate NVR, PTZ cameras and detection integrated with Aura, with physical actuation always manual.',
-      tags: ['Frigate NVR', 'PTZ', 'Aura'],
-      aria: 'Illustration of the camera panel with one highlighted detection and the manual actuation notice',
-      detection: 'detection',
-      cameras: ['Camera 1', 'PTZ camera', 'Camera 3', 'Camera 4'],
-      notice: 'Gate and locks: always manually operated',
     },
     clinics: {
       title: 'Clinics',

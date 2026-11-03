@@ -95,35 +95,6 @@ export default function Projects() {
 
         <article className="pf-pj">
           <div className="pf-pl">
-            <h3 className="pf-pt">{p.house.title}</h3>
-            <p className="pf-pd">{p.house.description}</p>
-            <Tags items={p.house.tags} />
-          </div>
-          <div className="pf-pv">
-            <div className="pf-house" role="img" aria-label={p.house.aria}>
-              <div className="pf-cams">
-                {p.house.cameras.map((cam, i) => (
-                  <div className="pf-cam" key={cam}>
-                    {i === 0 ? (
-                      <div className="pf-det"><span>{p.house.detection}</span></div>
-                    ) : null}
-                    <span>{cam}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="pf-notice">
-                <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
-                  <rect x="3" y="8" width="12" height="8" rx="2" fill="none" stroke="currentColor" strokeWidth="1.8" />
-                  <path d="M6 8 V5.5 a3 3 0 0 1 6 0 V8" fill="none" stroke="currentColor" strokeWidth="1.8" />
-                </svg>
-                <span>{p.house.notice}</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article className="pf-pj">
-          <div className="pf-pl">
             <h3 className="pf-pt" style={{ color: 'var(--mu)' }}>{p.clinics.title}</h3>
             <p className="pf-pd">{p.clinics.description}</p>
           </div>
