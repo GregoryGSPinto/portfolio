@@ -43,7 +43,6 @@ export default function Writing({ posts }: { posts: { pt: PostTeaser[]; en: Post
           </div>
           <div className="pf-post-act">
             <Link className="pf-btn pf-btn-gold" href={`/blog/${post.slug}`}>{c.writing.read}</Link>
-            <Link className="pf-btn pf-btn-line" href="/blog">{c.writing.all}</Link>
           </div>
         </article>
       </div>

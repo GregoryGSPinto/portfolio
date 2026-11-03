@@ -24,7 +24,7 @@ export async function GET() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gregory Guimarães - Blog</title>
-    <link>${SITE_URL}/blog</link>
+    <link>${SITE_URL}</link>
     <description>Technical articles on architecture, DDD, AI/ML, and frontend engineering.</description>
     <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>

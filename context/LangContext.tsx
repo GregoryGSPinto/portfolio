@@ -9,14 +9,6 @@ type TranslationTree = typeof translations.pt;
 const STORAGE_KEY = 'lang';
 const listeners = new Set<() => void>();
 
-function getNestedValue(obj: Record<string, unknown>, path: string): unknown {
-  return path.split('.').reduce<unknown>((acc, key) => {
-    if (acc && typeof acc === 'object' && key in (acc as Record<string, unknown>)) {
-      return (acc as Record<string, unknown>)[key];
-    }
-    return path; // fallback: return the key itself
-  }, obj);
-}
 
 // Client-only source of truth. The server always renders 'pt' (getServerSnapshot),
 // so the first client render matches the server HTML and React re-renders with the
@@ -83,9 +75,3 @@ export function useLang() {
   return context;
 }
 
-export function useT(section?: string) {
-  const { t, lang, toggleLang } = useLang();
-  if (!section) return { t, lang, toggleLang };
-  const sectionT = getNestedValue(t as unknown as Record<string, unknown>, section);
-  return { t: sectionT, lang, toggleLang };
-}
