@@ -1,4 +1,5 @@
 import { personalInfo } from '@/lib/data';
+import { siteConfig } from '@/lib/site';
 
 interface PersonJsonLdProps {
   name: string;
@@ -16,6 +17,11 @@ export function PersonJsonLd({ name, jobTitle, url, sameAs, knowsAbout }: Person
     jobTitle,
     url,
     sameAs,
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Verdor',
+      url: siteConfig.links.verdor,
+    },
     knowsAbout,
     email: personalInfo.email,
     address: {

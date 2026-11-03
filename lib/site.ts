@@ -17,6 +17,7 @@ export const siteConfig = {
     github: 'https://github.com/GregoryGSPinto',
     linkedin: 'https://www.linkedin.com/in/mqt-gregory/',
     repository: 'https://github.com/GregoryGSPinto/portfolio',
+    verdor: 'https://verdor-landing.vercel.app',
   },
 } as const;
 

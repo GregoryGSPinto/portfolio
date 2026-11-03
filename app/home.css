@@ -405,3 +405,5 @@
 .pf-visit { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin-top: 16px; padding: 0 4px; font-weight: 600; color: var(--gt); text-decoration: underline; text-underline-offset: 4px; }
 .pf-visit:hover { color: var(--ink); }
 .pf-visit:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+.pf-row b a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+.pf-row b a:hover { color: var(--gt); }

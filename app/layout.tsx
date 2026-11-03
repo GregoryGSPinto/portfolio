@@ -134,6 +134,7 @@ export default function RootLayout({
           sameAs={[
             siteConfig.links.github,
             siteConfig.links.linkedin,
+            siteConfig.links.verdor,
           ]}
           knowsAbout={[
             'Solution Architecture',
