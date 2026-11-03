@@ -11,6 +11,9 @@ export default function Footer() {
       <div className="pf-wrap">
         <span>{c.footer.left}</span>
         <span>{c.footer.place}</span>
+        <a href={siteConfig.links.verdor} target="_blank" rel="noopener noreferrer">
+          Verdor
+        </a>
         <a href={siteConfig.links.repository} target="_blank" rel="noopener noreferrer">
           {c.footer.source}
         </a>

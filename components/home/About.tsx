@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { siteConfig } from '@/lib/site';
 import { useHome } from './useHome';
 
 export default function About() {
@@ -20,7 +21,15 @@ export default function About() {
           {a.timeline.map((t) => (
             <div className="pf-row" key={t.name}>
               <div>
-                <b>{t.name}</b>
+                <b>
+                  {t.name === 'Verdor' ? (
+                    <a href={siteConfig.links.verdor} target="_blank" rel="noopener noreferrer">
+                      {t.name}
+                    </a>
+                  ) : (
+                    t.name
+                  )}
+                </b>
                 <span>{t.role}</span>
               </div>
               {t.note ? <span className="now">{t.note}</span> : null}
