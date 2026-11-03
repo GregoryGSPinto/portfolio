@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  // Rotas removidas: links antigos (LinkedIn, Google) seguem para a home.
+  redirects: async () => [
+    { source: '/projects', destination: '/#projetos', permanent: true },
+    { source: '/projects/:path*', destination: '/#projetos', permanent: true },
+    { source: '/blog', destination: '/', permanent: true },
+  ],
   headers: async () => [
     {
       source: '/fonts/:path*',

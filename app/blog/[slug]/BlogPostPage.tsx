@@ -66,10 +66,10 @@ export default function BlogPostPage({
 
         <article className="flex-1 min-w-0 max-w-3xl">
           <Link
-            href="/blog"
+            href="/#escrita"
             className="inline-flex items-center gap-1 text-sm text-text-tertiary hover:text-accent transition-colors mb-8"
           >
-            &larr; {lang === 'pt' ? 'Voltar ao blog' : 'Back to blog'}
+            &larr; {lang === 'pt' ? 'Voltar ao início' : 'Back to home'}
           </Link>
 
           <header className="mb-10 rounded-[28px] border p-6 md:p-8" style={{ borderColor: 'var(--border-subtle)', background: 'var(--card-bg)' }}>
@@ -106,7 +106,7 @@ export default function BlogPostPage({
 
             {post.project ? (
               <Link
-                href={`/projects/${post.project}`}
+                href="/#projetos"
                 className="inline-flex items-center gap-1 mt-4 text-sm text-accent hover:text-accent-hover transition-colors font-mono"
               >
                 {lang === 'pt' ? 'Ver projeto relacionado' : 'View related project'} &rarr;

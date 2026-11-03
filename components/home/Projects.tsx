@@ -2,9 +2,10 @@
 
 import { useHome } from './useHome';
 
-function Tags({ items }: { items: readonly string[] }) {
+function Tags({ items, status }: { items: readonly string[]; status?: string }) {
   return (
     <ul className="pf-tags">
+      {status ? <li className="st">{status}</li> : null}
       {items.map((t) => (
         <li key={t}>{t}</li>
       ))}
@@ -20,8 +21,8 @@ const LINKS = {
 
 function Visit({ href, label, name }: { href: string; label: string; name: string }) {
   return (
-    <a className="pf-visit" href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label} ${name}`}>
-      {label} {name} <span aria-hidden="true">↗</span>
+    <a className="pf-visit" href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label}: ${name}`}>
+      {label} <span aria-hidden="true">↗</span>
     </a>
   );
 }
@@ -39,7 +40,7 @@ export default function Projects() {
           <div className="pf-pl">
             <h3 className="pf-pt">Blackbelts</h3>
             <p className="pf-pd">{p.blackbelts.description}</p>
-            <Tags items={p.blackbelts.tags} />
+            <Tags items={p.blackbelts.tags} status={p.live} />
             <Visit href={LINKS.blackbelts} label={p.visit} name="Blackbelts" />
           </div>
           <div className="pf-pv">
@@ -56,13 +57,8 @@ export default function Projects() {
           <div className="pf-pl">
             <h3 className="pf-pt">PrimalWOD</h3>
             <p className="pf-pd">{p.primalwod.description}</p>
-            <Tags items={p.primalwod.tags} />
+            <Tags items={p.primalwod.tags} status={p.live} />
             <Visit href={LINKS.primalwod} label={p.visit} name="PrimalWOD" />
-          </div>
-          <div className="pf-pv">
-            <div className="pf-wodbig" aria-hidden="true">
-              <span>WOD<em>.</em></span>
-            </div>
           </div>
         </article>
 
@@ -70,33 +66,8 @@ export default function Projects() {
           <div className="pf-pl">
             <h3 className="pf-pt">Aura</h3>
             <p className="pf-pd">{p.aura.description}</p>
-            <Tags items={p.aura.tags} />
+            <Tags items={p.aura.tags} status={p.inDev} />
             <Visit href={LINKS.aura} label={p.visit} name="Aura" />
-          </div>
-          <div className="pf-pv">
-            <div className="pf-aura" role="img" aria-label={p.aura.aria}>
-              <div className="pf-aura-top">
-                <b>Aura</b>
-                <span className="pf-stop">{p.aura.stop}</span>
-              </div>
-              {p.aura.levels.map((l, i) => (
-                <div className="pf-lvl" key={l.id}>
-                  <span className={`pf-lvl-id${i === 2 ? ' l3' : ''}`}>{l.id}</span>
-                  <div className="pf-lvl-t">
-                    <b>{l.title}</b>
-                    <span>{l.sub}</span>
-                  </div>
-                  <span className={`pf-badge${i === 0 ? ' ok' : i === 2 ? ' l3' : ''}`}>{l.badge}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </article>
-
-        <article className="pf-pj">
-          <div className="pf-pl">
-            <h3 className="pf-pt" style={{ color: 'var(--mu)' }}>{p.clinics.title}</h3>
-            <p className="pf-pd">{p.clinics.description}</p>
           </div>
         </article>
       </div>

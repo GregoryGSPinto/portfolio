@@ -100,7 +100,7 @@
   --sans: var(--font-barlow), system-ui, sans-serif;
   --mono: var(--font-plex-mono), ui-monospace, monospace;
 
-  /* Aliases kept for /blog, /projects and other pre-redesign components */
+  /* Aliases kept for the article page and other pre-redesign components */
   --bg-primary: var(--bg);
   --bg-secondary: var(--sheet);
   --bg-tertiary: var(--ln);

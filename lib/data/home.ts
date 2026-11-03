@@ -139,7 +139,9 @@ const pt = {
     },
   },
   projects: {
-    visit: 'Visitar',
+    visit: 'Ver o site',
+    live: 'No ar',
+    inDev: 'Em desenvolvimento',
     title: 'Projetos',
     blackbelts: {
       description:
@@ -161,25 +163,12 @@ const pt = {
       description:
         'Agente pessoal controlado por voz, para prospecção e gestão de tarefas. Memória semântica com ciclo de vida completo (V7). Roadmap: app web com voz (v0.1), app mobile, servidor dedicado e ecossistema de hardware.',
       tags: ['Agentes', 'Memória semântica', 'Voz'],
-      aria: 'Ilustração do painel da Aura com três níveis de autonomia e o botão Parar',
-      stop: 'Parar',
-      levels: [
-        { id: 'L1', title: 'Pesquisar e organizar', sub: 'Faz sozinha', badge: 'Autônomo' },
-        { id: 'L2', title: 'Enviar comunicações', sub: 'Espera a sua aprovação', badge: 'Com aprovação' },
-        { id: 'L3', title: 'Dinheiro, lei e reputação', sub: 'Sempre com você', badge: 'Só humano' },
-      ],
-    },
-    clinics: {
-      title: 'Clínicas',
-      description:
-        'O próximo produto vertical da Verdor, em construção. Mesmo método dos anteriores: um nicho, o vocabulário dele e pagamentos embutidos desde o primeiro dia.',
     },
   },
   writing: {
     title: 'Escrita',
     lead: 'Um artigo técnico sobre o que está por trás do Blackbelts.',
     read: 'Ler o artigo',
-    all: 'Todos os artigos',
     minRead: 'min de leitura',
   },
   about: {
@@ -338,7 +327,9 @@ const en: HomeCopy = {
     },
   },
   projects: {
-    visit: 'Visit',
+    visit: 'See the site',
+    live: 'Live',
+    inDev: 'In development',
     title: 'Projects',
     blackbelts: {
       description:
@@ -360,25 +351,12 @@ const en: HomeCopy = {
       description:
         'A voice-controlled personal agent for prospecting and task management. Semantic memory with a full lifecycle (V7). Roadmap: web app with voice (v0.1), mobile app, dedicated server and a hardware ecosystem.',
       tags: ['Agents', 'Semantic memory', 'Voice'],
-      aria: 'Illustration of the Aura panel with three autonomy levels and the Stop button',
-      stop: 'Stop',
-      levels: [
-        { id: 'L1', title: 'Research and organize', sub: 'Does it alone', badge: 'Autonomous' },
-        { id: 'L2', title: 'Send communications', sub: 'Waits for your approval', badge: 'Needs approval' },
-        { id: 'L3', title: 'Money, law and reputation', sub: 'Always with you', badge: 'Human only' },
-      ],
-    },
-    clinics: {
-      title: 'Clinics',
-      description:
-        'Verdor’s next vertical product, under construction. Same method as the previous ones: one niche, its vocabulary, and embedded payments from day one.',
     },
   },
   writing: {
     title: 'Writing',
     lead: 'A technical article about what sits behind Blackbelts.',
     read: 'Read the article',
-    all: 'All articles',
     minRead: 'min read',
   },
   about: {

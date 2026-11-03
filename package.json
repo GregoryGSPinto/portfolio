@@ -12,7 +12,6 @@
     "check": "pnpm typecheck && pnpm lint:strict && pnpm build"
   },
   "dependencies": {
-    "@mdx-js/react": "^3.1.1",
     "@vercel/analytics": "^1.6.1",
     "@vercel/og": "^0.11.1",
     "@vercel/speed-insights": "^1.3.1",
@@ -23,7 +22,6 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "reading-time": "^1.5.0",
-    "rehype-pretty-code": "^0.14.3",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
     "resend": "^6.9.3"
